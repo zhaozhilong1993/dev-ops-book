@@ -5,6 +5,19 @@
 我们知道puppet可以在多节点部署上面有很好的管理效用，既然是多节点，那肯定需要有一个文件专门定义了你所有的node节点的地址的位置，接着我们需要在一个node节点上面安装很多的组件，那么对组件的管理又应该在一个文件里面表示出来。
 
 我先给一个文件目录的大概结构，刚刚安装完puppet的是没有这么多文件的，我为了更好的讲解puppet所以添加了一些文件
+```
+
+├── auth.conf # 认证文件
+├── fileserver.conf 
+├── manifests # 主要的模块文件
+│   ├── modules.pp
+│   ├── node.pp
+│   └── site.pp
+├── modules # 模块集合
+│   ├── mymodule
+│   ├── heat
+└── puppet.conf # 配置文件
+```
 
 首先是manifests目录
 
