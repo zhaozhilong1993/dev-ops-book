@@ -1,12 +1,12 @@
-# puppet的目录树 {#puppet基本结构-puppet的目录树}
+# Puppet的目录树 {#puppet基本结构-puppet的目录树}
 
 我们在了解怎么使用puppet的时候，一定要了解puppet的目录结构，因为puppet是一种管理工具，我们就必须知道它什么文件写什么东西，什么目录做什么事情。
 
 我们知道puppet可以在多节点部署上面有很好的管理效用，既然是多节点，那肯定需要有一个文件专门定义了你所有的node节点的地址的位置，接着我们需要在一个node节点上面安装很多的组件，那么对组件的管理又应该在一个文件里面表示出来。
 
 我先给一个文件目录的大概结构，刚刚安装完puppet的是没有这么多文件的，我为了更好的讲解puppet所以添加了一些文件
-```
 
+```
 ├── auth.conf # 认证文件
 ├── fileserver.conf 
 ├── manifests # 主要的模块文件
@@ -32,16 +32,12 @@
 **site.pp**
 
 ```
-
 import "modules.pp"
 import "node.pp"
 
 node default {
 }
 ```
-
-
-
 
 再看看modules.pp文件
 
@@ -64,8 +60,7 @@ import  "mymodule"
 node "packstack-storage-2.novalocal" {
     include heat 
     include mymodule 
-} 
-
+}
 ```
 
 我们已经看完manifests模块下面的内容,接下来modules的内容
@@ -98,7 +93,6 @@ modules/
 │      ├── logging.pp
 │      ├── params.pp
 │      └── policy.pp
-
 ```
 
 到这里，你应该对整个的puppet的模块的目录结构有基本的认识。对于puppet种一些函数的写法，下节将会讲到.
