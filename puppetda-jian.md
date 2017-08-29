@@ -61,17 +61,57 @@ Notice: Signed certificate request for puppet-agent.openstacklocal
 Notice: Removing file Puppet::SSL::CertificateRequest puppet-agent.openstacklocal at '/var/lib/puppet/ssl/ca/requests/puppet-agent.openstacklocal.pem'
 ```
 
-PS：如果我们希望删除某一个证书，我们可以运行这个命令：
-
-```
-# 删除某一个证书
-[root@puppet-master ssl]# puppet cert clean puppet-agent.openstacklocal
-```
-
 ### 2.5 puppet-agent 节点再次运行puppet
 
 ```
-[root@puppet-agent ssl]# puppet agent -t --server puppet-master.openstacklocal
+[root@puppet-agent ~]# puppet agent -t --server puppet-master.openstacklocal
+Info: Caching certificate for puppet-agent.openstacklocal
+Info: Caching certificate_revocation_list for ca
+Info: Caching certificate for puppet-agent.openstacklocal
+Info: Retrieving pluginfacts
+Info: Retrieving plugin
+Info: Caching catalog for puppet-agent.openstacklocal
+Info: Applying configuration version '1503996686'
+Notice: Finished catalog run in 0.02 seconds
+```
+
+我们可以看见puppet-agent已经运行成功了
+
+### 2.6 删除puppet-agent的证书
+
+如果我们希望删除某一个证书，我们可以运行这个命令：
+
+```
+# master上删除某一个证书
+[root@puppet-master ssl]# puppet cert clean puppet-agent.openstacklocal
+```
+
+这时候，如果puppet-agent还想再往这个master上提交证书，就需要把老的证书给删了：
+
+```
+# 没删之前,运行puppet命令会提示证书实效
+[root@puppet-agent ~]# puppet agent -t --server puppet-master.openstacklocal
+Exiting; no certificate found and waitforcert is disabled
+
+# 删除旧的证书
+[root@puppet-agent ~]# rm -fr /var/lib/puppet/ssl/*
+
+# 重新生成一个证书
+[root@puppet-agent ~]# puppet agent -t --server puppet-master.openstacklocal
+Info: Creating a new SSL key for puppet-agent.openstacklocal
+Info: Caching certificate for ca
+Info: csr_attributes file loading from /etc/puppet/csr_attributes.yaml
+Info: Creating a new SSL certificate request for puppet-agent.openstacklocal
+Info: Certificate Request fingerprint (SHA256): 8F:4D:C5:4C:0D:19:4F:81:69:F9:D9:01:20:4B:10:AB:D0:94:FD:49:30:79:E2:8E:E8:89:8D:EF:7D:2C:D7:F8
+Info: Caching certificate for ca
+Exiting; no certificate found and waitforcert is disabled
+
+# master节点重新签署证书
+[root@puppet-master ssl]# puppet cert list
+  "puppet-agent.openstacklocal" (SHA256) 8F:4D:C5:4C:0D:19:4F:81:69:F9:D9:01:20:4B:10:AB:D0:94:FD:49:30:79:E2:8E:E8:89:8D:EF:7D:2C:D7:F8
+[root@puppet-master ssl]# puppet cert sign "puppet-agent.openstacklocal"
+Notice: Signed certificate request for puppet-agent.openstacklocal
+Notice: Removing file Puppet::SSL::CertificateRequest puppet-agent.openstacklocal at '/var/lib/puppet/ssl/ca/requests/puppet-agent.openstacklocal.pem'
 ```
 
 
