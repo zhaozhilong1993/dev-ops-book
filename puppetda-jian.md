@@ -21,7 +21,7 @@ Puppet环境的搭建
 # 2. 安装puppet服务
 
 ## 2.1 puppet-master节点安装puppet
-
+我们需要在这里配置yum源
 ```
  rpm -ivh https://yum.puppetlabs.com/el/7/products/x86_64/puppetlabs-release-7-11.noarch.rpm
  yum install -y puppet-server
