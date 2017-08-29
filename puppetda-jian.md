@@ -61,6 +61,13 @@ Notice: Signed certificate request for puppet-agent.openstacklocal
 Notice: Removing file Puppet::SSL::CertificateRequest puppet-agent.openstacklocal at '/var/lib/puppet/ssl/ca/requests/puppet-agent.openstacklocal.pem'
 ```
 
+如果我们希望删除某一个证书：
+
+```
+# 删除某一个证书
+[root@puppet-master ssl]# puppet cert clean puppet-agent.openstacklocal
+```
+
 ### 2.5 puppet-agent 节点再次运行puppet
 
 ```
