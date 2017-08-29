@@ -25,38 +25,40 @@ Puppet环境的搭建
 
 ```
  # 安装epel源
- rpm -ivh https://yum.puppetlabs.com/el/7/products/x86_64/puppetlabs-release-7-11.noarch.rpm
- 
+ [root@puppet-master ssl]# rpm -ivh https://yum.puppetlabs.com/el/7/products/x86_64/puppetlabs-release-7-11.noarch.rpm
+
  # 安装puppet-server
- yum install -y puppet-server
- 
+ [root@puppet-master ssl]# yum install -y puppet-server
+
  # 启动puppetmaster
- systemctl start puppetmaster
+ [root@puppet-master ssl]# systemctl start puppetmaster
 ```
 
 ### 2.2 puppet-agent节点安装puppet
 
 ```
 # 安装puppet
-yum install -y puppet
+[root@puppet-agent ssl]# yum install -y puppet
 ```
 
 ### 2.3 puppet-agent节点注册证书
 
 ```
 # 生成证书并提交给puppet-master测试
-puppet agent -t --server puppet-master.openstacklocal 
+[root@puppet-agent ssl]# puppet agent -t --server puppet-master.openstacklocal
 ```
 
 ### 2.4 puppet-master查看注册证书
 
 ```
 # 查看当前需要master签署的证书
-puppet cert list
-
+[root@puppet-master ssl]# puppet cert list
+  "puppet-agent.openstacklocal" (SHA256) 9C:B2:C1:4A:D5:A6:8B:26:B1:D2:C8:43:F5:7E:C1:00:61:D7:B5:60:D2:7C:A2:2B:3E:0D:6B:4E:94:F5:BB:44
 
 # 签署某一个证书
-Puppet cert sign 
+[root@puppet-master ssl]# puppet cert sign puppet-agent.openstacklocal
+Notice: Signed certificate request for puppet-agent.openstacklocal
+Notice: Removing file Puppet::SSL::CertificateRequest puppet-agent.openstacklocal at '/var/lib/puppet/ssl/ca/requests/puppet-agent.openstacklocal.pem'
 ```
 
 Agent 节点测试:
