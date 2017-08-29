@@ -7,7 +7,7 @@ yum install -y httpd httpd-devel mod_ssl \
 ruby-devel rubygems gcc-c++ curl-devel zlib-devel make automake  openssl-devel
 ```
 
-切换 ruby的默认源
+切换ruby的默认源
 
 ```
 [root@puppet-master ~]# gem source ls
@@ -23,9 +23,9 @@ https://rubygems.org/
 
 ```
 # gem install json
-# gem install rack -v=1.2.5
-# gem install passenger -v=4.0.5
 ```
+
+### 使用nginx转发不同环境的请求
 
 
 
