@@ -61,9 +61,32 @@
 
 因为涉及的代码比较庞大，可以直接在git上下载puppet-heat模块来看代码.
 
-| `modules/├── heat│   ├── manifests│      ├── api_cfn.pp│      ├── api_cloudwatch.pp│      ├── api.pp│      ├── client.pp│      ├── config.pp│      ├── db│      │   ├── mysql.pp│      │   ├── postgresql.pp│      │   └── sync.pp│      ├── db.pp│      ├── deps.pp│      ├── engine.pp│      ├── init.pp│      ├── keystone│      │   ├── auth_cfn.pp│      │   ├── auth.pp│      │   └── domain.pp│      ├── logging.pp│      ├── params.pp│      └── policy.pp` |
-| :--- |
+```
+modules/
+├── heat
+│   ├── manifests
+│      ├── api_cfn.pp
+│      ├── api_cloudwatch.pp
+│      ├── api.pp
+│      ├── client.pp
+│      ├── config.pp
+│      ├── db
+│      │   ├── mysql.pp
+│      │   ├── postgresql.pp
+│      │   └── sync.pp
+│      ├── db.pp
+│      ├── deps.pp
+│      ├── engine.pp
+│      ├── init.pp
+│      ├── keystone
+│      │   ├── auth_cfn.pp
+│      │   ├── auth.pp
+│      │   └── domain.pp
+│      ├── logging.pp
+│      ├── params.pp
+│      └── policy.pp
 
+```
 
 到这里，你应该对整个的puppet的模块的目录结构有基本的认识。对于puppet种一些函数的写法，下节将会讲到.
 
