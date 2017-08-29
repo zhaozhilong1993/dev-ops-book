@@ -31,8 +31,16 @@
 
 **site.pp**
 
-| `import"modules.pp"import"node.pp"nodedefault{}` |
-| :--- |
+```
+
+import "modules.pp"
+import "node.pp"
+
+node default {
+}
+```
+
+
 
 
 再看看modules.pp文件
@@ -41,9 +49,10 @@
 
 **modules.pp**
 
-| `import"heat"import"mymodule"` |
-| :--- |
-
+```
+import  "heat"
+import  "mymodule"
+```
 
 再看看node.pp文件
 
@@ -51,9 +60,13 @@
 
 **node.pp**
 
-| `node"packstack-storage-2.novalocal"{include heatinclude mymodule}` |
-| :--- |
+```
+node "packstack-storage-2.novalocal" {
+    include heat 
+    include mymodule 
+} 
 
+```
 
 我们已经看完manifests模块下面的内容,接下来modules的内容
 
