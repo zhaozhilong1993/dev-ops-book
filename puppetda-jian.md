@@ -61,11 +61,11 @@ Notice: Signed certificate request for puppet-agent.openstacklocal
 Notice: Removing file Puppet::SSL::CertificateRequest puppet-agent.openstacklocal at '/var/lib/puppet/ssl/ca/requests/puppet-agent.openstacklocal.pem'
 ```
 
-Agent 节点测试:
+### 2.5 puppet-agent 节点再次运行puppet
 
-1. 运行puppet agent
+```
+[root@puppet-agent ssl]# puppet agent -t --server puppet-master.openstacklocal
+```
 
-Puppet agent -t —server puppet-master.openstacklocal
 
-配置master自动签署认证：
 
