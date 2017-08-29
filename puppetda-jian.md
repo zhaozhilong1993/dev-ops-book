@@ -109,6 +109,8 @@ Exiting; no certificate found and waitforcert is disabled
 # master节点重新签署证书
 [root@puppet-master ssl]# puppet cert list
   "puppet-agent.openstacklocal" (SHA256) 8F:4D:C5:4C:0D:19:4F:81:69:F9:D9:01:20:4B:10:AB:D0:94:FD:49:30:79:E2:8E:E8:89:8D:EF:7D:2C:D7:F8
+
+# master节点重新签署证书
 [root@puppet-master ssl]# puppet cert sign "puppet-agent.openstacklocal"
 Notice: Signed certificate request for puppet-agent.openstacklocal
 Notice: Removing file Puppet::SSL::CertificateRequest puppet-agent.openstacklocal at '/var/lib/puppet/ssl/ca/requests/puppet-agent.openstacklocal.pem'
