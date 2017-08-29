@@ -6,7 +6,7 @@
 
 我先给一个文件目录的大概结构，刚刚安装完puppet的是没有这么多文件的，我为了更好的讲解puppet所以添加了一些文件
 
-| `├── auth.conf # 认证文件├── fileserver.conf├── manifests # 主要的模块文件│   ├── modules.pp│   ├── node.pp│   └── site.pp├── modules # 模块集合│   ├── mymodule│   ├── heat└── puppet.conf # 配置文件` |
+|  |
 | :--- |
 
 
