@@ -19,13 +19,15 @@ https://rubygems.org/
 [root@puppet-master ~]# gem source -a https://gems.ruby-china.org
 ```
 
-
-
 ```
 # gem install json
 ```
 
 ### 使用nginx转发不同环境的请求
+
+```
+
+```
 
 
 
