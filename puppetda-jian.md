@@ -1,13 +1,13 @@
-Puppet环境的搭建
+# Puppet环境的搭建
 
 | 服务器角色 | 服务器地址 |
 | :--- | :--- |
 | puppet-master | 172.16.0.33 |
 | puppet-agent | 172.16.0.36 |
 
-# 1.环境准备
+## 1.环境准备
 
-## 1.1 配置hosts解析
+### 1.1 配置hosts解析
 
 ```
 172.16.0.36 puppet-agent.openstacklocal
@@ -17,7 +17,7 @@ Puppet环境的搭建
 
 这步一定要做，因为puppet的ca证书的索引都是以主机名为标示的。
 
-# 2. 安装puppet服务
+## 2. 安装puppet服务
 
 ### 2.1 puppet-master节点安装puppet
 
