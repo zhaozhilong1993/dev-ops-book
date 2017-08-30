@@ -19,6 +19,14 @@ https://rubygems.org/
 [root@puppet-master ~]# gem source -a https://gems.ruby-china.org
 ```
 
+其实我们需要下载的gem包都可以在rubygem的官方库里面找到
+
+```
+https://rubygems.org/gems/passenger/versions/4.0.19
+```
+
+
+
 ```
 # gem install json
 ```
