@@ -72,5 +72,9 @@ class openstack {
 
 ## Puppet的逻辑顺序控制\(before,require,subscribe,notify\)
 
+before和require这两个的效果是一样的
+
+subscribe和notify这两个的效果是一样的
+
 
 
