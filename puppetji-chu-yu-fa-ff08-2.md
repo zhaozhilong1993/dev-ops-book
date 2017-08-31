@@ -100,19 +100,24 @@ class openstack {
    exec { 'add-index':
      cwd => "/var/www/html",
      command => "/usr/bin/echo 'hello puppet world' > index.html",
-     before => Exec['check-port'],
+     before => Exec['check-port'], # 这个add-index操作要在下面的check-port之前
    }
 
    exec { 'check-port':
      command => "/usr/bin/curl 127.0.0.1:8888 > /mnt/web_log",
-     require => Service['httpd'],
+     require => Service['httpd'], # 这个check-port操作需要依赖于httpd的服务
    }
 
    Package['httpd'] -> File['/etc/httpd/conf.d/ustack.conf'] -> Service['httpd']
 }
 ```
 
+注意在Puppet中的关系链的声明或者requirt／before之类的属性调用的时候，对应的资源的首字母要大写，如：
 
+```
+Service['httpd']就对应的 service {'httpd':}这个类
+Package['httpd']就对应 package { 'httpd':}这个类
+```
 
 
 
