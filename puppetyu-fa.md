@@ -95,10 +95,28 @@ class openstack {
 
 ## 文件管理 -- file类
 
-文件的管理相对来说比较复杂
+文件的管理相对来说比较复杂.
 
 ```
+# 首先先写主逻辑的文件
+[root@puppet-master manifests]# cat init.pp  |grep -v ^#
+class openstack {
+   package { 'httpd':}
 
+   service { 'httpd':
+     ensure => running,
+     enable => true,
+   }
+    
+   file { '/etc/httpd/conf.d/ustack.conf':
+     ensure  => present, # 是否创建
+     owner   => 'apache', # 文件的用户名
+     group   => 'apache', # 文件的所属组
+     mode    => '0777', # 权限
+     replace => true, # 如果文件已存在，是否替换
+     content => template("ustack-openstack/ustack.conf.erb"), # 文件内容的模版的位置
+   }
+}
 ```
 
 
