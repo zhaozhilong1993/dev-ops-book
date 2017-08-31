@@ -72,9 +72,47 @@ class openstack {
 
 ## Puppet的逻辑顺序控制\(before,require,subscribe,notify\)
 
-before和require这两个的效果是一样的
+before：某个操作在某个操作之前
 
-subscribe和notify这两个的效果是一样的
+require：某个操作依赖于某个操作
+
+如：
+
+```
+class openstack {
+
+   package { 'httpd':}
+
+   service { 'httpd':
+     ensure => running,
+     enable => true,
+   }
+
+   file { '/etc/httpd/conf.d/ustack.conf':
+     ensure  => present,
+     owner   => 'apache',
+     group   => 'apache',
+     mode    => '0777',
+     replace => true,
+     content => template("ustack-openstack/ustack.conf.erb"),
+   }
+
+   exec { 'add-index':
+     cwd => "/var/www/html",
+     command => "/usr/bin/echo 'hello puppet world' > index.html",
+     before => Exec['check-port'],
+   }
+
+   exec { 'check-port':
+     command => "/usr/bin/curl 127.0.0.1:8888 > /mnt/web_log",
+     require => Service['httpd'],
+   }
+
+   Package['httpd'] -> File['/etc/httpd/conf.d/ustack.conf'] -> Service['httpd']
+}
+```
+
+
 
 
 
