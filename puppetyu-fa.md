@@ -95,8 +95,19 @@ class openstack {
 
 ## 运行shell命令 -- exec类
 
+我们有时候希望运行一些shell命令，可以这样写:
+
 ```
- 
+[root@puppet-master manifests]# cat init.pp  |grep -v ^#
+    class openstack {
+        package { 'httpd':
+    }
+
+    service { 'httpd':
+        ensure => running,
+        enable => true,
+    }
+}
 ```
 
 ## 文件管理 -- file类
