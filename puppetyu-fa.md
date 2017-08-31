@@ -81,5 +81,17 @@ class openstack {
 }
 ```
 
+接下来在puppet-agent端运行我们的测试
+
+```
+ [root@puppet-agent ~]# puppet agent -t --server puppet-master.openstacklocal
+ [root@puppet-agent ~]# systemctl status vsftpd
+● vsftpd.service - Vsftpd ftp daemon
+   Loaded: loaded (/usr/lib/systemd/system/vsftpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Thu 2017-08-31 13:39:32 CST; 2min 38s ago
+```
+
+## 
+
 
 
