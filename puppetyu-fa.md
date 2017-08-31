@@ -103,7 +103,6 @@ class openstack {
      cwd => "/mnt/",
      command => "/usr/bin/touch file",
    }
-
 }
 ```
 
