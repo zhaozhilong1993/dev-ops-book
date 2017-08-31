@@ -6,4 +6,5 @@
 * [Puppet的目录结构](puppetyu-fa/puppetde-mu-lu-jie-gou.md)
 * [Puppet基础语法](puppetyu-fa.md)
 * [Puppet配置hiera数据源](puppetpei-zhi-hiera-shu-ju-yuan.md)
+* [Puppet](puppet.md)
 
