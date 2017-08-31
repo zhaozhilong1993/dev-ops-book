@@ -138,11 +138,7 @@ class openstack {
 ```
 [root@puppet-agent ~]# puppet agent -t --server puppet-master.openstacklocal
 [root@puppet-agent conf.d]# crontab -l
-接下来在puppet-agent端运行我们的测试
-[root@puppet-agent ~]# puppet agent -t --server puppet-master.openstacklocal
-[root@puppet-agent conf.d]# ls /mnt
-file
-
+0 2 * * * /usr/sbin/echo > /var/log/http/access.log
 ```
 
 ## 
