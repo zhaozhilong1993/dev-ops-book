@@ -38,12 +38,18 @@ node "snuffie.example.com", "bigbird.example.com", "hooper.example.com" {
 ```
 
 在使用了Hiera之后，manifests文件发生了如下变化：
+
+```
 node "kermit.example.com", "grover.example.com", "snuffie.example.com" {
   include ntp
   # or:
   # class { "ntp": }
 }
+```
+
 所有的数据设置移到了hiera中:
+
+```
 ---
 ntp::restrict:
  -
@@ -54,10 +60,12 @@ ntp::servers:
   - 1.us.pool.ntp.org iburst
   - 2.us.pool.ntp.org iburst
   - 3.us.pool.ntp.org iburst
-2.  hiera.yaml配置文件
+```
+
+# 2.  hiera.yaml配置文件
     hiera.yaml是Hiera唯一的配置文件，它其中只有少数几个配置参数，但决定了Hiera不同的使用方式。
 
-2.1 文件路径
+## 2.1 文件路径
    在puppet.conf中通过设置hiera_config参数来设置hiera.yaml文件的路径，默认值为：$confdir/hiera.yaml      (注意Puppet 4.x以上时，默认值变更为$codedir/hiera.yaml)
 2.2 参数详解
 以下为hiera.yaml配置文件的默认值:
