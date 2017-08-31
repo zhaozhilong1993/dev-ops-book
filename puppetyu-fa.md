@@ -178,5 +178,5 @@ Listen 8888
 hello puppet world
 ```
 
-
+在实际使用中，我们肯定不希望我们每加一个文件都需要重启httpd,所以，我们需要在建立conf.d文件的时候，去通知httpd，让他重启。
 
