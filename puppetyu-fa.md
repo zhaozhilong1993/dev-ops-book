@@ -69,7 +69,16 @@ class openstack {
 ## 服务的启动与停止 -- service类
 
 ```
+[root@puppet-master manifests]# cat init.pp  |grep -v ^#
+    class openstack {
+        package { 'vsftpd':
+    }
 
+    service { 'vsftpd':
+        ensure => running,
+        enable => true,
+    }
+}
 ```
 
 
