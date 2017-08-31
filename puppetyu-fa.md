@@ -1,4 +1,4 @@
-#  {#puppet基本结构-puppet的目录树}
+# Puppet基础语法
 
 
 
