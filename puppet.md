@@ -130,12 +130,14 @@ class myclass ($parameter_one = "default text") {
 }
 ```
 
-当我们调用 myclass 这个类时，Puppet 遵循如下方式来设定 $parameter\_one 这个参数的值：  
-如果在调用这个类的时候，显式的向其传递了参数值，那么 Puppet 使用显式传递的值作为参数的值。  
-如果调用类时没有传递参数的值，那么 Puppet 会自动从 Hiera 中查询参数的值，查找时使用 :: 做为查找的键（例如上面的 myclass 类的 prarameter\_one 参数，查找键为 myclass::parameter\_one）  
-如果方法 1 和 2 都没有获取到值，那么 Puppet 会使用类定义中参数的默认值作为参数的值（例如 myclass 中 prameter\_one 参数的默认值为 "default text"）  
-如果 1 至 3 都没有获取到值，那么 Puppet 将会直接报错，代码的编译将被中断。  
-上 面的方法 2 是 Puppet 最有趣的地方，因为 Puppet 会自动从 Hiera 中查找参数的值，我们可以在代码中使用 include 语句来调用一个类，不需要对其传递任何参数值，所有的参数传递都可以将参数值写到 Hiera 中，Puppet 会自动从 Hiera 中读取类的参数。例如，我想调用上面定义的 myclass 类，并且 $parameter\_one 的参数值为 "ustack"，参数的传递使用 Hiera 来完成。那么我需要在 Hiera 中写入下面的值：
+当我们调用 myclass 这个类时，Puppet 遵循如下方式来设定 $parameter\_one 这个参数的值：
+
+1. 如果在调用这个类的时候，显式的向其传递了参数值，那么 Puppet 使用显式传递的值作为参数的值。
+2. 如果调用类时没有传递参数的值，那么 Puppet 会自动从 Hiera 中查询参数的值，查找时使用 :: 做为查找的键（例如上面的 myclass 类的 prarameter\_one 参数，查找键为 myclass::parameter\_one）
+3. 如果方法 1 和 2 都没有获取到值，那么 Puppet 会使用类定义中参数的默认值作为参数的值（例如 myclass 中 prameter\_one 参数的默认值为 "default text"）
+4. 如果 1 至 3 都没有获取到值，那么 Puppet 将会直接报错，代码的编译将被中断。
+
+上面的方法 2 是 Puppet 最有趣的地方，因为 Puppet 会自动从 Hiera 中查找参数的值，我们可以在代码中使用 include 语句来调用一个类，不需要对其传递任何参数值，所有的参数传递都可以将参数值写到 Hiera 中，Puppet 会自动从 Hiera 中读取类的参数。例如，我想调用上面定义的 myclass 类，并且 $parameter\_one 的参数值为 "ustack"，参数的传递使用 Hiera 来完成。那么我需要在 Hiera 中写入下面的值：
 
 ```
 myclass::parameter_one: 'ustack'
