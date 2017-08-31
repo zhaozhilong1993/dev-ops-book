@@ -63,7 +63,7 @@ class openstack {
 ```
  [root@puppet-agent ~]# puppet agent -t --server puppet-master.openstacklocal
  [root@puppet-agent ~]# rpm -qa | grep httpd
- vsftpd-3.0.2-21.el7.x86_64
+ httpd-2.4.6-45.el7.centos.4.x86_64
 ```
 
 ## 服务的启动与停止 -- service类
