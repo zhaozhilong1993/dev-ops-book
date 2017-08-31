@@ -145,5 +145,38 @@ Listen 8888
 </VirtualHost>
 ```
 
+接下来在puppet-agent端运行我们的测试
+
+```
+[root@puppet-agent ~]# puppet agent -t --server puppet-master.openstacklocal
+
+# 查看文件是否建立
+[root@puppet-agent conf.d]# cat /etc/httpd/conf.d/ustack.conf
+Listen 8888
+<VirtualHost *:8888>
+        DocumentRoot /var/www/html
+        <Directory /var/www/html>
+                Options None
+                AllowOverride None
+                Order allow,deny
+                allow from all
+        </Directory>
+        ErrorLog logs/ustack-error_log
+        CustomLog logs/ustack-access_log combined
+</VirtualHost>
+
+[root@puppet-agent conf.d]# ll  /etc/httpd/conf.d/ustack.conf
+-rwxrwxrwx 1 apache apache 355 Aug 31 14:00 /etc/httpd/conf.d/ustack.conf
+```
+
+到这一步，我们只是创建了一个httpd的conf.d的文件，但是我们并没有重启服务，所以，希望这个文件生效，我们现在需要手动重启服务：
+
+```
+[root@puppet-agent ~]# systemctl restart httpd
+[root@puppet-agent ~]# echo "hello puppet world" > /var/www/html/index.html
+[root@puppet-agent ~]# curl 127.0.0.1:8888
+hello puppet world
+```
+
 
 
