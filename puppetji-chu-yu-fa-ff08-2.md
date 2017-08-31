@@ -162,6 +162,8 @@ class openstack {
 }
 ```
 
+这个效果和下面的subscribe的例子是一样的。
+
 ### subscribe
 
 资源有更新时，通知另一个资源执行相应的动作。目前支持subscribe只有exec、service、mount。
