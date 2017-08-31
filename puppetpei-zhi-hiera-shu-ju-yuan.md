@@ -66,9 +66,12 @@ ntp::servers:
     hiera.yaml是Hiera唯一的配置文件，它其中只有少数几个配置参数，但决定了Hiera不同的使用方式。
 
 ## 2.1 文件路径
-   在puppet.conf中通过设置hiera_config参数来设置hiera.yaml文件的路径，默认值为：$confdir/hiera.yaml      (注意Puppet 4.x以上时，默认值变更为$codedir/hiera.yaml)
-2.2 参数详解
+   在puppet.conf中通过设置hiera_config参数来设置hiera.yaml文件的路径，默认值为：$confdir/hiera.yaml    
+   (注意Puppet 4.x以上时，默认值变更为$codedir/hiera.yaml)
+   
+## 2.2 参数详解
 以下为hiera.yaml配置文件的默认值:
+```
 ---
 :backends: yaml
 :yaml:
@@ -82,13 +85,16 @@ ntp::servers:
 :logger: console
 :merge_behavior: native
 :deep_merge_options: {}
+```
+
 对于这个路径 ： /etc/puppetlabs/code/environments/%{environment}/hieradata 它其实是一个目录，这个目录下面就需要的数据文件符合下面的格式:
 nodes/%{::trusted.certname}.yaml [这个是动态路径，所以我就不全部写出来了]
 common.yaml [对应是嗯面的hierarchy里面的common]
 上面的%{environment}其实是puppet的环境变量，一般都有默认值，可以使用下面的命令进程查看:
+```
 # puppet master --configprint environment
 production
-
+```
 
 参数名称
 类型	说明
