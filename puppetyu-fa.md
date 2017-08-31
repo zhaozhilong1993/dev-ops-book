@@ -112,12 +112,12 @@ class openstack {
 [root@puppet-master manifests]# cat init.pp  |grep -v ^#
 class openstack {
 
-   cron { logrotate:
-      command => "/usr/sbin/logrotate",
-      user => root,
-      hour => 2,
-      minute => 0
-   }
+    cron { "clean-log":
+        command => "/usr/sbin/echo > /var/log/http/access.log",
+        user => root,
+        hour => 2,
+        minute => 0
+    }
 }
 ```
 
@@ -158,9 +158,6 @@ crontab要执行的命令, 环境变量按照系统本地规则进行管理,推�
 
 **weekday**  
 运行crontab的星期数,0-7
-
-  
-
 
 ## 文件管理 -- file类
 
