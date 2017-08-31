@@ -167,7 +167,7 @@ class openstack {
      content => template("ustack-openstack/ustack.conf.erb"),
    }
 
-   exec { 'copy_weblog':
+   exec { 'restart_web':
      command => "/usr/bin/systemctl restart httpd",
      subscribe => File['/etc/httpd/conf.d/ustack.conf'],
    }
