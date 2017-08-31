@@ -95,5 +95,34 @@ modules/
 │      └── policy.pp
 ```
 
+puppet内置了一些命令可以帮助我们生成我们的新的模块：
+
+```
+# 注意模块的名字一定要是<name>-<name>的形式，中间一定要有"-"
+[root@puppet-master modules]# puppet module generate ustack-openstack
+
+#之后我们就可以在/etc/puppet/modules/下面看到我们的文件
+[root@puppet-master modules]# ls /etc/puppet/modules/
+ ustack-openstack
+ 
+# 查看基本的目录结构
+[root@puppet-master modules]# tree -L 3 /etc/puppet/modules/ustack-openstack/
+/etc/puppet/modules/ustack-openstack/
+├── Gemfile
+├── manifests
+│   └── init.pp
+├── metadata.json
+├── Rakefile
+├── README.md
+├── spec
+│   ├── classes
+│   │   └── init_spec.rb
+│   └── spec_helper.rb
+└── tests
+    └── init.pp
+```
+
+
+
 到这里，你应该对整个的puppet的模块的目录结构有基本的认识。对于puppet种一些函数的写法，下节将会讲到.
 
