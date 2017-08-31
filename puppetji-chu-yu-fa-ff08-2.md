@@ -176,7 +176,7 @@ class openstack {
 }
 ```
 
-我们定义的顺序是：先安装包-》启动服务-》生成conf.d的模版文件-》用exec重启服务
+我们定义的顺序是：先安装包-》启动服务-》生成conf.d的模版文件-》用exec重启服务。一旦File\['/etc/httpd/conf.d/ustack.conf'\]这个任务被执行了，就回去执行Exec\['restart\_web'\]这个任务，反之，如果File\['/etc/httpd/conf.d/ustack.conf'\]没有被执行，则Exec\['restart\_web'\]不会被执行。
 
 notify和subscribe是对应的，在一个资源里使用了notify，就相当于在另一个资源中使用了subscribe。
 
