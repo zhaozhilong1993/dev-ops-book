@@ -151,5 +151,9 @@ include myclass
 
 这里不用对myclass传递参数，myclass会自动读取Hiera中对parameter\_one定义的值，即$parameter\_one的值在调用时为'ustack'
 
+
+
+参考资料：
+
 [http://docs.puppetlabs.com/hiera/latest/](http://docs.puppetlabs.com/hiera/latest/)
 
