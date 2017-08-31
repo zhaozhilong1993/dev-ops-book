@@ -91,7 +91,11 @@ class openstack {
    Active: active (running) since Thu 2017-08-31 13:39:32 CST; 2min 38s ago
 ```
 
-## 
+## 文件管理 -- file类
+
+```
+
+```
 
 
 
