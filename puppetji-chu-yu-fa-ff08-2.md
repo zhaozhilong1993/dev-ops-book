@@ -132,12 +132,48 @@ Service['httpd']就对应的 service {'httpd':}这个类
 notify => Type1[‘title1’]，表示notify所在资源执行后通知’title1’，经常用于配置文件更新后通知服务重启。
 ```
 
+我们来看看下面的结果：
+
+```
+
+```
+
 ### subscribe
 
 资源有更新时，通知另一个资源执行相应的动作。
 
 ```
 subscribe => Type1[‘title1’]，表示subscribe所在资源关心资源’title1’，当’title1’发生变化了会通知subscribe所在资源。
+```
+
+我们来看看下面的结果：
+
+```
+class openstack {
+
+   package { 'httpd':}
+
+   service { 'httpd':
+     ensure => running,
+     enable => true,
+   }
+
+   file { '/etc/httpd/conf.d/ustack.conf':
+     ensure  => present,
+     owner   => 'apache',
+     group   => 'apache',
+     mode    => '0777',
+     replace => true,
+     content => template("ustack-openstack/ustack.conf.erb"),
+   }
+
+   exec { 'copy_weblog':
+     command => "/usr/bin/systemctl restart httpd",
+     subscribe => File['/etc/httpd/conf.d/ustack.conf'],
+   }
+
+   Package['httpd'] -> Service['httpd'] -> File['/etc/httpd/conf.d/ustack.conf']
+}
 ```
 
 目前支持subscribe只有exec、service、mount。
