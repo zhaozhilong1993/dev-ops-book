@@ -107,7 +107,7 @@ class openstack {
      ensure => running,
      enable => true,
    }
-    
+
    file { '/etc/httpd/conf.d/ustack.conf':
      ensure  => present, # 是否创建
      owner   => 'apache', # 文件的用户名
@@ -117,6 +117,32 @@ class openstack {
      content => template("ustack-openstack/ustack.conf.erb"), # 文件内容的模版的位置
    }
 }
+```
+
+到这一步并没有全部结束，我们还需要创建一个名为ustack.conf.erb的文件模版。默认puppet会去下面这个路径去找对应的模版：
+
+&lt;模块名&gt;／templates/&lt;模版文件名&gt;
+
+所以，我们需要创建这个模版：
+
+```
+# 首先建立当前模块的模版文件的目录
+[root@puppet-master ustack-openstack]# mkdir /etc/puppet/modules/ustack-openstack/templates
+
+# 在这个目录下面建立模版文件
+[root@puppet-master ustack-openstack]# cat /etc/puppet/modules/ustack-openstack/templates/ustack.conf.erb
+Listen 8888
+<VirtualHost *:8888>
+        DocumentRoot /var/www/html
+        <Directory /var/www/html>
+                Options None
+                AllowOverride None
+                Order allow,deny
+                allow from all
+        </Directory>
+        ErrorLog logs/ustack-error_log
+        CustomLog logs/ustack-access_log combined
+</VirtualHost>
 ```
 
 
