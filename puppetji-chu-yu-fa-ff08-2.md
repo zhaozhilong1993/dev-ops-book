@@ -72,11 +72,15 @@ class openstack {
 
 ## Puppet的逻辑顺序控制\(before,require\)
 
-before：某个操作在某个操作之前
+### before
 
-require：某个操作依赖于某个操作
+某个操作在某个操作之前
 
-如：
+### require
+
+某个操作依赖于某个操作
+
+我们可以通过一个实用案例来体验，如：
 
 ```
 class openstack {
