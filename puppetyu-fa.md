@@ -131,9 +131,21 @@ class openstack {
 }
 ```
 
-除了用户和command两个参数以外,其他的参数都是可选项.参见：http://puppet.wikidot.com/cron
+除了用户和command两个参数以外,其他的参数都是可选项.参见：[http://puppet.wikidot.com/cron](http://puppet.wikidot.com/cron)
 
+接下来在puppet-agent端运行我们的测试
 
+```
+[root@puppet-agent ~]# puppet agent -t --server puppet-master.openstacklocal
+[root@puppet-agent conf.d]# crontab -l
+接下来在puppet-agent端运行我们的测试
+[root@puppet-agent ~]# puppet agent -t --server puppet-master.openstacklocal
+[root@puppet-agent conf.d]# ls /mnt
+file
+
+```
+
+## 
 
 ## 文件管理 -- file类
 
