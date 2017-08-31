@@ -114,7 +114,7 @@ class openstack {
 file
 ```
 
-## 
+
 
 ## 管理定时任务 -- cron类
 
@@ -141,7 +141,7 @@ class openstack {
 0 2 * * * /usr/sbin/echo > /var/log/http/access.log
 ```
 
-## 
+
 
 ## 文件管理 -- file类
 
