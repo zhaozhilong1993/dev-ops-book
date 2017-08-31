@@ -1,4 +1,4 @@
-# Puppet基础语法（1）
+# Puppet基础语法（3）
 
 在上节中，我们介绍了Puppet的基本文件结构，结下来我们就要对，我们在上节自定义的ustack-openstack这个Puppet模块写一些简单的例子，来加深我们对Puppet的理解。
 
