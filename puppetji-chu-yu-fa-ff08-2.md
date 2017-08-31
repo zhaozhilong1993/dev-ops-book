@@ -135,7 +135,31 @@ notify => Type1[‘title1’]，表示notify所在资源执行后通知’title1
 我们来看看下面的结果：
 
 ```
+class openstack {
 
+   package { 'httpd':}
+
+   service { 'httpd':
+     ensure => running,
+     enable => true,
+   }
+
+   file { '/etc/httpd/conf.d/ustack.conf':
+     ensure  => present,
+     owner   => 'apache',
+     group   => 'apache',
+     mode    => '0777',
+     replace => true,
+     notify  => Exec['restart_web'],
+     content => template("ustack-openstack/ustack.conf.erb"),
+   }
+
+   exec { 'restart_web':
+     command => "/usr/bin/systemctl restart httpd",
+   }
+
+   Package['httpd'] -> Service['httpd'] -> File['/etc/httpd/conf.d/ustack.conf']
+}
 ```
 
 ### subscribe
