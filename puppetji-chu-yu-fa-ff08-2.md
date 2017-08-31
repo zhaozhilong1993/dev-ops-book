@@ -140,7 +140,7 @@ notify => Type1[‘title1’]，表示notify所在资源执行后通知’title1
 
 ### subscribe
 
-资源有更新时，通知另一个资源执行相应的动作。
+资源有更新时，通知另一个资源执行相应的动作。目前支持subscribe只有exec、service、mount。
 
 ```
 subscribe => Type1[‘title1’]，表示subscribe所在资源关心资源’title1’，当’title1’发生变化了会通知subscribe所在资源。
@@ -176,7 +176,7 @@ class openstack {
 }
 ```
 
-目前支持subscribe只有exec、service、mount。
+我们定义的顺序是：先安装包-》启动服务-》生成conf.d的模版文件-》用exec重启服务
 
 notify和subscribe是对应的，在一个资源里使用了notify，就相当于在另一个资源中使用了subscribe。
 
