@@ -55,7 +55,7 @@ class openstack {
 [root@puppet-master manifests]# cat init.pp  |grep -v ^#
 class openstack {
    package { 'vsftpd':}
-}   
+}
 ```
 
 接下来在puppet-agent端运行我们的测试
@@ -64,6 +64,12 @@ class openstack {
  [root@puppet-agent ~]# puppet agent -t --server puppet-master.openstacklocal
  [root@puppet-agent ~]# rpm -qa | grep vsftpd
  vsftpd-3.0.2-21.el7.x86_64
+```
+
+## 服务的启动与停止 -- service类
+
+```
+
 ```
 
 
