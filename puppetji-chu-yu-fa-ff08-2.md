@@ -25,9 +25,17 @@ class openstack {
 }
 ```
 
+正常的流程应该是：
+
+```
+[package的安装] -> [file的创建] -> [service的启动]
+```
+
+这个在Puppet里面就叫做关系链。
+
 ### Puppet的关系链
 
-在上节中，我们需要
+我们在这里就需要使用puppet去创建我们关系链
 
 ```
 
