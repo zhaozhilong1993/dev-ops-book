@@ -1,4 +1,4 @@
-# Puppet基础语法
+# Puppet基础语法（1）
 
 在上节中，我们介绍了Puppet的基本文件结构，结下来我们就要对，我们在上节自定义的ustack-openstack这个Puppet模块写一些简单的例子，来加深我们对Puppet的理解。
 
@@ -179,6 +179,4 @@ hello puppet world
 ```
 
 在实际使用中，我们肯定不希望我们每加一个文件都需要重启httpd,所以，我们需要在建立conf.d文件的时候，去通知httpd，让他重启。怎么做呢？puppet内部的核心函数里面就有这个方法notify.
-
-
 
