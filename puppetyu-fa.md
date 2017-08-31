@@ -23,7 +23,7 @@
 
 我们接下来就在manifests的init.pp文件里面书写我们的代码。
 
-### 创建系统用户 -- user类
+## 创建系统用户 -- user类
 
 我们在puppey-master中定义了这个类：
 
