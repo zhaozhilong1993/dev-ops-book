@@ -119,5 +119,5 @@ Service['httpd']就对应的 service {'httpd':}这个类
 Package['httpd']就对应 package { 'httpd':}这个类
 ```
 
-
+Puppet的通知属性 -- 
 
