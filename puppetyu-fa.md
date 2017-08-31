@@ -93,6 +93,12 @@ class openstack {
            man:apachectl(8)
 ```
 
+## 运行shell命令 -- exec类
+
+```
+ 
+```
+
 ## 文件管理 -- file类
 
 文件的管理相对来说比较复杂.
