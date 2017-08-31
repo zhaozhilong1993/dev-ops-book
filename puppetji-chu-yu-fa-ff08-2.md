@@ -70,11 +70,13 @@ class openstack {
  hello world
 ```
 
-## Puppet的逻辑顺序控制\(before,require\)
+## Puppet的逻辑顺序控制\(before,require。after\)
 
 before：某个操作在某个操作之前
 
 require：某个操作依赖于某个操作
+
+after: 某个操作在某个操作之后
 
 如：
 
@@ -107,6 +109,11 @@ class openstack {
      command => "/usr/bin/curl 127.0.0.1:8888 > /mnt/web_log",
      require => Service['httpd'], # 这个check-port操作需要依赖于httpd的服务
    }
+   
+exec { 'check-port':
+command => "/usr/bin/curl 127.0.0.1:8888 > /mnt/web_log",
+require => Service['httpd'], # 这个check-port操作需要依赖于httpd的服务
+}
 
    Package['httpd'] -> File['/etc/httpd/conf.d/ustack.conf'] -> Service['httpd']
 }
@@ -119,5 +126,5 @@ Service['httpd']就对应的 service {'httpd':}这个类
 Package['httpd']就对应 package { 'httpd':}这个类
 ```
 
-Puppet的通知属性 -- 
+Puppet的触发操作属性 （subscribe，notify，）
 
