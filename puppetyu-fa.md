@@ -70,9 +70,8 @@ class openstack {
 
 ```
 [root@puppet-master manifests]# cat init.pp  |grep -v ^#
-    class openstack {
-        package { 'httpd':
-    }
+class openstack {
+    package { 'httpd':}
 
     service { 'httpd':
         ensure => running,
@@ -99,14 +98,9 @@ class openstack {
 
 ```
 [root@puppet-master manifests]# cat init.pp  |grep -v ^#
-    class openstack {
-        package { 'httpd':
-    }
+class openstack {
 
-    service { 'httpd':
-        ensure => running,
-        enable => true,
-    }
+
 }
 ```
 
