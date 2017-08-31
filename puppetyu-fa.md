@@ -99,7 +99,10 @@ class openstack {
 ```
 [root@puppet-master manifests]# cat init.pp  |grep -v ^#
 class openstack {
-
+ 
+    exec { 'add-local-hosts':
+    
+    }
 
 }
 ```
