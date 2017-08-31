@@ -57,7 +57,7 @@ import  "ustack-openstack"
 
 ```
 node "packstack-storage-2.novalocal" {
-    include ustack-openstack
+    include openstack
 }
 ```
 
