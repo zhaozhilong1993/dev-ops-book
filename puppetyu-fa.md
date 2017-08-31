@@ -54,7 +54,7 @@ class openstack {
 ```
 [root@puppet-master manifests]# cat init.pp  |grep -v ^#
 class openstack {
-   package { 'vsftpd':}
+   package { 'httpd':}
 }
 ```
 
@@ -62,7 +62,7 @@ class openstack {
 
 ```
  [root@puppet-agent ~]# puppet agent -t --server puppet-master.openstacklocal
- [root@puppet-agent ~]# rpm -qa | grep vsftpd
+ [root@puppet-agent ~]# rpm -qa | grep httpd
  vsftpd-3.0.2-21.el7.x86_64
 ```
 
@@ -71,10 +71,10 @@ class openstack {
 ```
 [root@puppet-master manifests]# cat init.pp  |grep -v ^#
     class openstack {
-        package { 'vsftpd':
+        package { 'httpd':
     }
 
-    service { 'vsftpd':
+    service { 'httpd':
         ensure => running,
         enable => true,
     }
@@ -92,6 +92,8 @@ class openstack {
 ```
 
 ## 文件管理 -- file类
+
+文件的管理相对来说比较复杂
 
 ```
 
