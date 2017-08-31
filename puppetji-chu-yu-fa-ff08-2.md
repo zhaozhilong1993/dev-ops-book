@@ -120,7 +120,7 @@ Service['httpd']就对应的 service {'httpd':}这个类
 
 ## Puppet的触发操作属性 （subscribe，notify）
 
-## notify {#notify}
+### notify
 
 通知某个资源进行更新。
 
@@ -128,7 +128,7 @@ Service['httpd']就对应的 service {'httpd':}这个类
 notify => Type1[‘title1’]，表示notify所在资源执行后通知’title1’，经常用于配置文件更新后通知服务重启。
 ```
 
-## subscribe {#subscribe}
+### subscribe
 
 资源有更新时，通知另一个资源执行相应的动作。
 
