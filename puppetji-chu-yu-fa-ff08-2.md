@@ -109,11 +109,11 @@ class openstack {
      command => "/usr/bin/curl 127.0.0.1:8888 > /mnt/web_log",
      require => Service['httpd'], # 这个check-port操作需要依赖于httpd的服务
    }
-   
-exec { 'check-port':
-command => "/usr/bin/curl 127.0.0.1:8888 > /mnt/web_log",
-require => Service['httpd'], # 这个check-port操作需要依赖于httpd的服务
-}
+
+   exec { 'copy_weblog':
+     command => "/usr/bin/cp /mnt/web_log /mnt/web_log.back",
+     after => Exec['check-port'], # 这个copy_weblog操作需要在check-port之后
+   }
 
    Package['httpd'] -> File['/etc/httpd/conf.d/ustack.conf'] -> Service['httpd']
 }
