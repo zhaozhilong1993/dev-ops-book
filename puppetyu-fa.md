@@ -71,6 +71,8 @@ class openstack {
 file
 ```
 
+更多的exec的参数用法，见：http://puppet.wikidot.com/exec
+
 ## 管理定时任务 -- cron类
 
 ```
