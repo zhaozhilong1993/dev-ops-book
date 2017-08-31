@@ -55,10 +55,22 @@ class openstack {
      replace => true, # 如果文件已存在，是否替换
      content => template("ustack-openstack/ustack.conf.erb"), # 文件内容的模版的位置
    }
-   
+
+   # puppet运行的关系链
    Package['httpd'] -> File['/etc/httpd/conf.d/ustack.conf'] -> Service['httpd']
 }
 ```
+
+接下来在puppet-agent端运行我们的测试
+
+```
+ [root@puppet-agent ~]# puppet agent -t --server puppet-master.openstacklocal
+ [root@puppet-agent ~]# echo "hello world" > /var/www/html/index.html
+ [root@puppet-agent ~]# curl 127.0.0.1:8888
+ hello world
+```
+
+## 
 
 
 
