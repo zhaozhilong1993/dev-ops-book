@@ -70,7 +70,7 @@ class openstack {
  hello world
 ```
 
-## Puppet的逻辑顺序控制\(before,require,subscribe,notify\)
+## Puppet的逻辑顺序控制\(before,require\)
 
 before：某个操作在某个操作之前
 
