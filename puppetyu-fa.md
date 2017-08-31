@@ -49,6 +49,53 @@ class openstack {
  uid=1002(ustack) gid=1(bin) groups=1(bin)
 ```
 
+## 运行shell命令 -- exec类
+
+我们有时候希望运行一些shell命令，可以这样写:
+
+```
+[root@puppet-master manifests]# cat init.pp  |grep -v ^#
+class openstack {
+   exec { 'add-local-hosts':
+     cwd => "/mnt/", # 执行命令的位置
+     command => "/usr/bin/touch file", # 执行的命令
+   }
+}
+```
+
+接下来在puppet-agent端运行我们的测试
+
+```
+[root@puppet-agent ~]# puppet agent -t --server puppet-master.openstacklocal
+[root@puppet-agent conf.d]# ls /mnt
+file
+```
+
+## 管理定时任务 -- cron类
+
+```
+[root@puppet-master manifests]# cat init.pp  |grep -v ^#
+class openstack {
+
+    cron { "clean-log":
+        command => "/usr/sbin/echo > /var/log/http/access.log",
+        user => root,
+        hour => 2,
+        minute => 0
+    }
+}
+```
+
+除了用户和command两个参数以外,其他的参数都是可选项.参见：[http://puppet.wikidot.com/cron](http://puppet.wikidot.com/cron)
+
+接下来在puppet-agent端运行我们的测试
+
+```
+[root@puppet-agent ~]# puppet agent -t --server puppet-master.openstacklocal
+[root@puppet-agent conf.d]# crontab -l
+0 2 * * * /usr/sbin/echo > /var/log/http/access.log
+```
+
 ## 安装软件包 --  package类
 
 ```
@@ -91,57 +138,6 @@ class openstack {
      Docs: man:httpd(8)
            man:apachectl(8)
 ```
-
-## 运行shell命令 -- exec类
-
-我们有时候希望运行一些shell命令，可以这样写:
-
-```
-[root@puppet-master manifests]# cat init.pp  |grep -v ^#
-class openstack {
-   exec { 'add-local-hosts':
-     cwd => "/mnt/", # 执行命令的位置
-     command => "/usr/bin/touch file", # 执行的命令
-   }
-}
-```
-
-接下来在puppet-agent端运行我们的测试
-
-```
-[root@puppet-agent ~]# puppet agent -t --server puppet-master.openstacklocal
-[root@puppet-agent conf.d]# ls /mnt
-file
-```
-
-
-
-## 管理定时任务 -- cron类
-
-```
-[root@puppet-master manifests]# cat init.pp  |grep -v ^#
-class openstack {
-
-    cron { "clean-log":
-        command => "/usr/sbin/echo > /var/log/http/access.log",
-        user => root,
-        hour => 2,
-        minute => 0
-    }
-}
-```
-
-除了用户和command两个参数以外,其他的参数都是可选项.参见：[http://puppet.wikidot.com/cron](http://puppet.wikidot.com/cron)
-
-接下来在puppet-agent端运行我们的测试
-
-```
-[root@puppet-agent ~]# puppet agent -t --server puppet-master.openstacklocal
-[root@puppet-agent conf.d]# crontab -l
-0 2 * * * /usr/sbin/echo > /var/log/http/access.log
-```
-
-
 
 ## 文件管理 -- file类
 
