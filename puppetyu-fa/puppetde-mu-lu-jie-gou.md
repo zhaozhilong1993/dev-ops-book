@@ -14,8 +14,8 @@
 │   ├── node.pp
 │   └── site.pp
 ├── modules # 模块集合
-│   ├── mymodule
-│   ├── heat
+│   └── ustack-openstack
+│   
 └── puppet.conf # 配置文件
 ```
 
@@ -46,8 +46,7 @@ node default {
 **modules.pp**
 
 ```
-import  "heat"
-import  "mymodule"
+import  "ustack-openstack"
 ```
 
 再看看node.pp文件
@@ -58,44 +57,15 @@ import  "mymodule"
 
 ```
 node "packstack-storage-2.novalocal" {
-    include heat 
-    include mymodule 
+    include ustack-openstack
 }
 ```
 
 我们已经看完manifests模块下面的内容,接下来modules的内容
 
-在下面的我除去了大部分的内容,剩下的就是我们的manifests文件，这个也是modules文件的入口,当然，主程序的入口是init.pp，通过控制init.pp文件，来控制其他的小的模块的安装.
+**modules**
 
-因为涉及的代码比较庞大，可以直接在git上下载puppet-heat模块来看代码.
-
-```
-modules/
-├── heat
-│   ├── manifests
-│      ├── api_cfn.pp
-│      ├── api_cloudwatch.pp
-│      ├── api.pp
-│      ├── client.pp
-│      ├── config.pp
-│      ├── db
-│      │   ├── mysql.pp
-│      │   ├── postgresql.pp
-│      │   └── sync.pp
-│      ├── db.pp
-│      ├── deps.pp
-│      ├── engine.pp
-│      ├── init.pp
-│      ├── keystone
-│      │   ├── auth_cfn.pp
-│      │   ├── auth.pp
-│      │   └── domain.pp
-│      ├── logging.pp
-│      ├── params.pp
-│      └── policy.pp
-```
-
-puppet内置了一些命令可以帮助我们生成我们的新的模块：
+在下面的我除去了大部分的内容,剩下的就是我们的manifests文件，这个也是modules文件的入口,当然，主程序的入口是init.pp，通过控制init.pp文件，来控制其他的小的模块的安装.puppet内置了一些命令可以帮助我们生成我们的新的模块：
 
 ```
 # 注意模块的名字一定要是<name>-<name>的形式，中间一定要有"-"
@@ -104,25 +74,23 @@ puppet内置了一些命令可以帮助我们生成我们的新的模块：
 #之后我们就可以在/etc/puppet/modules/下面看到我们的文件
 [root@puppet-master modules]# ls /etc/puppet/modules/
  ustack-openstack
- 
+
 # 查看基本的目录结构
 [root@puppet-master modules]# tree -L 3 /etc/puppet/modules/ustack-openstack/
 /etc/puppet/modules/ustack-openstack/
 ├── Gemfile
 ├── manifests
-│   └── init.pp
+│   └── init.pp
 ├── metadata.json
 ├── Rakefile
 ├── README.md
 ├── spec
-│   ├── classes
-│   │   └── init_spec.rb
-│   └── spec_helper.rb
+│   ├── classes
+│   │   └── init_spec.rb
+│   └── spec_helper.rb
 └── tests
     └── init.pp
 ```
-
-
 
 到这里，你应该对整个的puppet的模块的目录结构有基本的认识。对于puppet种一些函数的写法，下节将会讲到.
 
