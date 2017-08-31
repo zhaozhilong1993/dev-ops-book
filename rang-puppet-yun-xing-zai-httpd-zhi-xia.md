@@ -25,8 +25,6 @@ https://rubygems.org/
 https://rubygems.org/gems/passenger/versions/4.0.19
 ```
 
-
-
 ```
 # gem install json
 ```
