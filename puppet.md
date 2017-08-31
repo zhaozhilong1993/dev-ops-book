@@ -1,10 +1,12 @@
-# 1.简介和历史
+# Puppet配置hiera数据源
+
+## 1.简介和历史
 
 Hiera是基于键值查询的数据配置工具，Hiera是一个可选工具，它的目标是：Hiera makes Puppet better by keeping site-specific data out of your manifests.  
 它的出现使得代码逻辑和数据可以分离管理。  
 在Puppet 2.x版本时代，Hiera作为一个独立的组件出现，若要使用则需要单独安装。在3.x版本之后，Hiera被整合到Puppet的代码中去。Hiera是Hierarchal单词的缩写，表明了其层次化数据格式的特点。
 
-## 1.1实例说明
+### 1.1实例说明
 
 在使用hiera前，一个常见的manifests文件是这么编写的：
 
@@ -61,16 +63,16 @@ ntp::servers:
   - 3.us.pool.ntp.org iburst
 ```
 
-# 2. hiera.yaml配置文件
+## 2. hiera.yaml配置文件
 
 hiera.yaml是Hiera唯一的配置文件，它其中只有少数几个配置参数，但决定了Hiera不同的使用方式。
 
-## 2.1文件路径
+### 2.1文件路径
 
 在puppet.conf中通过设置hiera\_config参数来设置hiera.yaml文件的路径，默认值为：$confdir/hiera.yaml  
 \(注意Puppet 4.x以上时，默认值变更为$codedir/hiera.yaml\)
 
-## 2.2参数详解
+### 2.2参数详解
 
 以下为hiera.yaml配置文件的默认值:
 
@@ -100,7 +102,7 @@ common.yaml \[对应是嗯面的hierarchy里面的common\]
 production
 ```
 
-# 3.自动查找hiera数据源
+## 3.自动查找hiera数据源
 
 Hiera是用来存储数据的地方，那么当Puppet代码中需要从hiera中读取某个数据时，我们可以在代码中使用hiera\(\)函数的方式，在hieradata中查找某个键值存储的数据，例如在hieradata文件test.yaml中定义了：
 
