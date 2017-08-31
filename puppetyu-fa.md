@@ -109,13 +109,58 @@ class openstack {
 ## 管理定时任务 -- cron类
 
 ```
-cron { logrotate:
-    command => "/usr/sbin/logrotate",
-    user => root,
-    hour => 2,
-    minute => 0
+[root@puppet-master manifests]# cat init.pp  |grep -v ^#
+class openstack {
+
+   cron { logrotate:
+      command => "/usr/sbin/logrotate",
+      user => root,
+      hour => 2,
+      minute => 0
+   }
 }
 ```
+
+除了用户和command两个参数以外,其他的参数都是可选项.
+
+**command**  
+crontab要执行的命令, 环境变量按照系统本地规则进行管理,推荐使用绝对路径.
+
+**ensure**  
+指定该资源是否启用,可设置成true或absent
+
+**environment**  
+在 crontab环境里面指定环境变量,例如 PATH=/bin:/usr/bin:/usr/sbin.
+
+**hour**  
+运行crontab的小时,可设置成0-23
+
+**minute**  
+运行crontab的分钟,可设置成0-59
+
+**month**  
+设置crontab运行的月份,1-12
+
+**monthday**  
+一个月份中的日子,1-31
+
+**name**  
+该crontab的名字,这个名字用于管理员区分不同的crontab,以及puppet管理各种资源关系.
+
+**provider**  
+指定provider,可用的provider有
+
+* crontab 默认的crontab程序
+* special 特殊的管理程序,只能在freebsd上面用
+
+**user**  
+把该crontab加到那个用户的crontab列表,默认是运行puppet的用户
+
+**weekday**  
+运行crontab的星期数,0-7
+
+  
+
 
 ## 文件管理 -- file类
 
