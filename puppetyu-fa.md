@@ -1,6 +1,6 @@
 # Puppet基础语法
 
-在上节中，我们介绍了Puppet的基本文件结构，结下来我们就要对，我们在上面自定义的ustack-openstack这个Puppet模块写一些简单的例子，来加深我们对Puppet的理解。
+在上节中，我们介绍了Puppet的基本文件结构，结下来我们就要对，我们在上节自定义的ustack-openstack这个Puppet模块写一些简单的例子，来加深我们对Puppet的理解。
 
 我们现在先来看看ustack-openstack这个目录的结构：
 
@@ -20,6 +20,40 @@
 └── tests
     └── init.pp
 ```
+
+我们接下来就在manifests的init.pp文件里面书写我们的代码。
+
+### 创建系统用户 -- user类
+
+我们在puppey-master中定义了这个类：
+
+```
+[root@puppet-master manifests]# cat init.pp  |grep -v ^#
+class openstack {
+   user { 'ustack':
+     ensure => present,
+     uid => '1002',
+     gid => '01',
+     shell => '/bin/bash',
+     home => '/home/gary',
+   }
+
+}
+```
+
+接下来在puppet-agent端运行我们的测试
+
+```
+ [root@puppet-agent ~]# puppet agent -t --server puppet-master.openstacklocal
+ [root@puppet-agent ~]# id ustack
+ uid=1002(ustack) gid=1(bin) groups=1(bin)
+```
+
+发现我们定义的方法生效了。
+
+
+
+## 安装软件包 --  package类
 
 
 
