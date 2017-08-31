@@ -100,9 +100,20 @@ class openstack {
 [root@puppet-master manifests]# cat init.pp  |grep -v ^#
 class openstack {
    exec { 'add-local-hosts':
-     cwd => "/mnt/",
-     command => "/usr/bin/touch file",
+     cwd => "/mnt/", # 执行命令的位置
+     command => "/usr/bin/touch file", # 执行的命令
    }
+}
+```
+
+## 管理定时任务 -- cron类
+
+```
+cron { logrotate:
+    command => "/usr/sbin/logrotate",
+    user => root,
+    hour => 2,
+    minute => 0
 }
 ```
 
