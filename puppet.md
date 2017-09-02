@@ -48,6 +48,7 @@ hiera.yaml是Hiera唯一的配置文件，它其中只有少数几个配置参�
 接下来我们就自己建立一个hiera.yaml文件：
 
 ```
+[root@puppet-master puppet]# mdkir -p /etc/puppet/hieradata
 [root@puppet-master puppet]# cat hiera.yaml
 ---
 :backends:
