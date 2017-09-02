@@ -45,8 +45,8 @@ environments/
 └── production
     ├── environments
     ├── manifests
-    │   └── cluster
-    │       └── hf.pp
+    │   └── cluster
+    │       └── hf.pp # 这个就是我们的node.pp的文件
     └── modules
         └── ustack-openstack
             ├── Gemfile
