@@ -64,7 +64,7 @@ hiera.yaml是Hiera唯一的配置文件，它其中只有少数几个配置参�
 新建base.yaml文件：
 
 ```
-[root@puppet-master puppet]# cat /etc/puppet/hieradata/openstacklocal/base.yaml
+[root@puppet-master puppet]# cat /etc/puppet/hieradata/global/base.yaml
 enable_httpd: true
 ```
 
@@ -101,9 +101,37 @@ $text = hiera('enable_httpd')
 
 获取到hiera里面的参数的值了。
 
+### 2.2 设置不同的客户端路径
+
+我们在上面设定一了一个固定的hiera的文件路径：
+
+```
+/etc/puppet/hieradata/openstacklocal/base.yaml
+```
+
+但是在实际的生产环境中，却不是这样配置的。因为生产环境中常常有很多套环境，所以说我们的hiera的文件的路径需要支持变量，这里我们用的是域名的方式进行区分，不同的环境：
+
+```
+[root@puppet-master puppet]# cat hiera.yaml
+---
+:backends:
+  - yaml
+:hierarchy:
+  - "%{::domain}/base"
+:yaml:
+# datadir is empty here, so hiera uses its defaults:
+#  - /var/lib/hiera on *nix
+#  - %CommonAppData%\PuppetLabs\hiera\var on Windows
+#  When specifying a datadir, make sure the directory exists.
+   :datadir: /etc/puppet/hieradata
+```
+
+```
+[root@puppet-master puppet]# hostname -d
+openstacklocal
+```
 
 
-2.2 设置不同的客户端路径
 
 参考资料：
 
