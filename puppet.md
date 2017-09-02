@@ -155,7 +155,14 @@ class openstack(
 puppet-agent端运行测试：
 
 ```
-
+[root@puppet-agent ~]# puppet agent   -t --server puppet-master.openstacklocal
+Info: Retrieving pluginfacts
+Info: Retrieving plugin
+Info: Caching catalog for puppet-agent.openstacklocal
+Info: Applying configuration version '1504342356'
+Notice: openstacklocal
+Notice: /Stage[main]/Openstack/Notify[openstacklocal]/message: defined 'message' as 'openstacklocal'
+Notice: Finished catalog run in 0.03 seconds
 ```
 
 参考资料：
