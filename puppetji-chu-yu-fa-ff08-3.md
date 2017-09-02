@@ -53,7 +53,7 @@ class openstack(
 
    ## 使用include的时候是不能传递参数的
    # include ustack-openstack::vsftpd
-   
+
    ## 但是这样声明一个类的时候是可以的
    class ustack-openstack::vsftpd {
      $enable_vsftpd = false
