@@ -99,5 +99,18 @@ class ustack-openstack::openstack(
 }
 ```
 
+之后客户端运行puppet命令测试
+
+```
+[root@puppet-agent puppet]# puppet agent -t --server puppet-master.openstacklocal --environment=production
+Info: Retrieving pluginfacts
+Info: Retrieving plugin
+Info: Caching catalog for puppet-agent.openstacklocal
+Info: Applying configuration version '1504344473'
+Notice: test
+Notice: /Stage[main]/Ustack-openstack::Openstack/Notify[test]/message: defined 'message' as 'test'
+Notice: Finished catalog run in 0.03 seconds
+```
+
 
 
