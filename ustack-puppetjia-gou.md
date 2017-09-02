@@ -40,14 +40,23 @@
 之后建立实际的environments环境：
 
 ```
-[root@puppet-master puppet]# tree -L 3 environments/
+[root@puppet-master puppet]# tree -L 4 environments/
 environments/
 └── production
     ├── environments
     ├── manifests
-    │   └── cluster
+    │   └── cluster
+    │       └── hf.pp
     └── modules
         └── ustack-openstack
+            ├── Gemfile
+            ├── manifests
+            ├── metadata.json
+            ├── Rakefile
+            ├── README.md
+            ├── spec
+            ├── templates
+            └── tests
 ```
 
 
