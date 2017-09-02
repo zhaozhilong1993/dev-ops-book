@@ -38,7 +38,12 @@ hiera.yaml是Hiera唯一的配置文件，它其中只有少数几个配置参�
 ### 2.1文件路径
 
 在puppet.conf中通过设置hiera\_config参数来设置hiera.yaml文件的路径，默认值为：$confdir/hiera.yaml  
-\(注意Puppet 4.x以上时，默认值变更为$codedir/hiera.yaml\)
+\(注意Puppet 4.x以上时，默认值变更为$codedir/hiera.yaml\)，查看本地的hiera的路径：
+
+```
+[root@puppet-master puppet]# puppet master --configprint hiera_config
+/etc/puppet/hiera.yaml
+```
 
 ### 2.2参数详解
 
