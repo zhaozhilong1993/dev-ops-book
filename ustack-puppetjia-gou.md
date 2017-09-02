@@ -45,8 +45,7 @@ environments/
 └── production
     ├── environments
     ├── manifests
-    │   ├── cluster
-    │   └── site.pp
+    │   └── cluster
     └── modules
         └── ustack-openstack
 ```
