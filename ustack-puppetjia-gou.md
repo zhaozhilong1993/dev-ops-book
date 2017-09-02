@@ -37,5 +37,23 @@
     [master]
         environmentpath = $confdir/environments
 
+之后建立实际的environments环境：
+
+```
+[root@puppet-master puppet]# tree -L 3 environments/
+environments/
+├── example_env
+│   ├── manifests
+│   ├── modules
+│   └── README.environment
+└── production
+    ├── environments
+    ├── manifests
+    │   ├── cluster
+    │   └── site.pp
+    └── modules
+        └── ustack-openstack
+```
+
 
 
