@@ -12,7 +12,7 @@ Hiera是基于键值查询的数据配置工具，Hiera是一个可选工具，�
 
 ```
 class openstack(
-  $enable_httpd = true,
+  $enable_httpd = false,
 ){
 
    if $enable_httpd {
