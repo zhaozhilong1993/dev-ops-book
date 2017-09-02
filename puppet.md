@@ -29,6 +29,8 @@ class openstack(
 vsftpd::enable: true
 ```
 
+这里就定义了hiera的变量的值。
+
 ## 2. hiera.yaml配置文件
 
 hiera.yaml是Hiera唯一的配置文件，它其中只有少数几个配置参数，但决定了Hiera不同的使用方式。
