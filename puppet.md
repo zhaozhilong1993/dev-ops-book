@@ -144,11 +144,9 @@ test_hiera_domain: openstacklocal
 
 ```
 class openstack(
-  $enable_httpd = hiera('enable_httpd'),
   $test_hiera_domain = hiera('test_hiera_domain'),
 ){
 
-  notify { "$enable_httpd": }
   notify { "$test_hiera_domain": }
 
 }
