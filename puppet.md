@@ -56,10 +56,6 @@ hiera.yaml是Hiera唯一的配置文件，它其中只有少数几个配置参�
 :hierarchy:
   - "global/base"
 :yaml:
-# datadir is empty here, so hiera uses its defaults:
-#  - /var/lib/hiera on *nix
-#  - %CommonAppData%\PuppetLabs\hiera\var on Windows
-#  When specifying a datadir, make sure the directory exists.
    :datadir: /etc/puppet/hieradata
 ```
 
