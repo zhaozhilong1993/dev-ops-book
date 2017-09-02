@@ -42,15 +42,11 @@
 ```
 [root@puppet-master puppet]# tree -L 3 environments/
 environments/
-├── example_env
-│   ├── manifests
-│   ├── modules
-│   └── README.environment
 └── production
     ├── environments
     ├── manifests
-    │   ├── cluster
-    │   └── site.pp
+    │   ├── cluster
+    │   └── site.pp
     └── modules
         └── ustack-openstack
 ```
