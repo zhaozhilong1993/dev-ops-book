@@ -99,6 +99,12 @@ Notice: Finished catalog run in 0.03 seconds
 $text = hiera('enable_httpd')
 ```
 
+获取到hiera里面的参数的值了。
+
+
+
+
+
 参考资料：
 
 [http://docs.puppetlabs.com/hiera/latest/](http://docs.puppetlabs.com/hiera/latest/)
