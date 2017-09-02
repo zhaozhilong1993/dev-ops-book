@@ -63,6 +63,10 @@ hiera.yaml是Hiera唯一的配置文件，它其中只有少数几个配置参�
 
 新建base.yaml文件：
 
+```
+[root@puppet-master puppet]# cat /etc/puppet/hieradata/openstacklocal/base.yaml
+enable_httpd: true
+```
 
 
 参考资料：
