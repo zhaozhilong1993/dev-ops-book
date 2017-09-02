@@ -140,6 +140,7 @@ Notice: Finished catalog run in 0.03 seconds
         # extension indicating the cache format is added automatically.
         # The default value is '$confdir/localconfig'.
         localconfig = $vardir/localconfig
+        # 这里就指定了版本号
         environment   = production
 
 
