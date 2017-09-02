@@ -126,6 +126,19 @@ $text = hiera('enable_httpd')
    :datadir: /etc/puppet/hieradata
 ```
 
+注：hierarchy下可以写很多行，因为它是个列表项，如：
+
+```
+:hierarchy:
+  - "%{::domain}/base1"
+  - "%{::domain}/base2"
+  - "%{::domain}/base3"
+```
+
+但是你会发现在运行的时候并不是所有的base1,base2,base3都会被加载，他只会去加载第一个匹配到的文件。
+
+
+
 之后在puppet-agent中查看我们的域名：
 
 ```
@@ -166,8 +179,6 @@ Notice: Finished catalog run in 0.03 seconds
 ```
 
 我们能看到这里的运行结果就是对的。
-
-
 
 参考资料：
 
