@@ -85,5 +85,18 @@ node "puppet-agent.openstacklocal" {
 }
 ```
 
+之后修改我们的module的init.pp文件：
+
+```
+[root@puppet-master puppet]# cat environments/production/modules/ustack-openstack/manifests/init.pp 
+class ustack-openstack::openstack(
+  $test_hiera_domain = "test",
+){
+
+  notify { "$test_hiera_domain": }
+
+}
+```
+
 
 
