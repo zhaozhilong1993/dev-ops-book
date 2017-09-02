@@ -127,12 +127,21 @@ $text = hiera('enable_httpd')
    :datadir: /etc/puppet/hieradata
 ```
 
-之后查看我们的域名：
+之后在puppet-agent中查看我们的域名：
 
 ```
-[root@puppet-master puppet]# hostname -d
+[root@puppet-agent puppet]# hostname -d
 openstacklocal
 ```
+
+同样的，我们需要在puppet-master端建立对应的路径：
+
+```
+[root@puppet-master puppet]# cat /etc/puppet/hieradata/openstacklocal/base.yaml
+test_hiera_domain: openstacklocal
+```
+
+
 
 参考资料：
 
