@@ -67,5 +67,13 @@ modulepath=/etc/puppet/environments/production/modules
 manifest=/etc/puppet/environments/production/manifests/cluster
 ```
 
+其实就是指定了module和mainfest的路径。
+
+之后把之前写好的module复制过来：
+
+```
+[root@puppet-master puppet]# cp -r /etc/puppet/modules/ustack-openstack/ /etc/puppet/environments/production/modules/
+```
+
 
 
