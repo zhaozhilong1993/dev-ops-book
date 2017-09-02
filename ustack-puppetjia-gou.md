@@ -89,6 +89,7 @@ node "puppet-agent.openstacklocal" {
 
 ```
 [root@puppet-master puppet]# cat environments/production/modules/ustack-openstack/manifests/init.pp 
+# 其实就是换个名字
 class ustack-openstack::openstack(
   $test_hiera_domain = "test",
 ){
