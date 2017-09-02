@@ -103,7 +103,7 @@ $text = hiera('enable_httpd')
 
 
 
-
+2.2 设置不同的客户端路径
 
 参考资料：
 
