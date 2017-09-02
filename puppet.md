@@ -106,7 +106,7 @@ $text = hiera('enable_httpd')
 我们在上面设定一了一个固定的hiera的文件路径：
 
 ```
-/etc/puppet/hieradata/openstacklocal/base.yaml
+/etc/puppet/hieradata/global/base.yaml
 ```
 
 但是在实际的生产环境中，却不是这样配置的。因为生产环境中常常有很多套环境，所以说我们的hiera的文件的路径需要支持变量，这里我们用的是域名的方式进行区分，不同的环境：
@@ -130,8 +130,6 @@ $text = hiera('enable_httpd')
 [root@puppet-master puppet]# hostname -d
 openstacklocal
 ```
-
-
 
 参考资料：
 
