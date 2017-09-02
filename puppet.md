@@ -118,7 +118,6 @@ $text = hiera('enable_httpd')
   - yaml
 :hierarchy:
   - "%{::domain}/base"
-  - "%{::domain}/main"
 :yaml:
 # datadir is empty here, so hiera uses its defaults:
 #  - /var/lib/hiera on *nix
@@ -160,8 +159,6 @@ puppet-agent端运行测试：
 ```
 
 ```
-
-
 
 参考资料：
 
