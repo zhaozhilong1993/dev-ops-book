@@ -27,19 +27,48 @@ class openstack(
 ustack-openstack/
 ├── Gemfile
 ├── manifests
-│   ├── init.pp
-│   └── vsftpd.pp # 新建的文件
+│   ├── init.pp
+│   └── vsftpd.pp # 新建的文件
 ├── metadata.json
 ├── Rakefile
 ├── README.md
 ├── spec
-│   ├── classes
-│   │   └── init_spec.rb
-│   └── spec_helper.rb
+│   ├── classes
+│   │   └── init_spec.rb
+│   └── spec_helper.rb
 ├── templates
-│   └── ustack.conf.erb
+│   └── ustack.conf.erb
 └── tests
     └── init.pp
+    
+    
+[root@puppet-master modules]# cat ustack-openstack/manifests/init.pp |grep -v ^#
+class openstack(
+  $enable_httpd = true,
+){
+
+   if $enable_httpd {
+     package { 'httpd':}
+   }
+
+   # include ustack-openstack::vsftpd
+   class ustack-openstack::vsftpd {
+     $enable_vsftpd = false
+   }
+
+}
+
+
+[root@puppet-master modules]# cat ustack-openstack/manifests/vsftpd.pp |grep -v ^#
+class ustacl-openstack::vsftpd(
+  $enable_vsftpd = true,
+){
+
+   if $enable_vsftpd {
+     package { 'vsftpd':}
+   }
+
+}
 ```
 
 
