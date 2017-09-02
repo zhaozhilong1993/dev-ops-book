@@ -61,9 +61,9 @@ hiera.yaml是Hiera唯一的配置文件，它其中只有少数几个配置参�
 
 上面的hierarchy部分定义了,我们将会在/etc/puppet/hieradata这个目录下面找哪个文件。我们接下来就需要去建立这个base文件，注意是，global／base.yaml这个文件，因为在backends中定义的文件后缀是yaml。
 
+新建base.yaml文件：
 
 
-## 
 
 参考资料：
 
