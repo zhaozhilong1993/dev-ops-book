@@ -35,7 +35,7 @@ vsftpd::enable: true
 
 hiera.yaml是Hiera唯一的配置文件，它其中只有少数几个配置参数，但决定了Hiera不同的使用方式。
 
-### 2.1文件路径
+### 2.1 hiera初体验
 
 在puppet.conf中通过设置hiera\_config参数来设置hiera.yaml文件的路径，默认值为：$confdir/hiera.yaml  
 \(注意Puppet 4.x以上时，默认值变更为$codedir/hiera.yaml\)，查看本地的hiera的路径：
