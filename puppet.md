@@ -117,8 +117,8 @@ $text = hiera('enable_httpd')
 :backends:
   - yaml
 :hierarchy:
-  - "global/base"
   - "%{::domain}/base"
+  - "%{::domain}/main"
 :yaml:
 # datadir is empty here, so hiera uses its defaults:
 #  - /var/lib/hiera on *nix
@@ -153,6 +153,12 @@ class openstack(
   notify { "$test_hiera_domain": }
 
 }
+```
+
+puppet-agent端运行测试：
+
+```
+
 ```
 
 
