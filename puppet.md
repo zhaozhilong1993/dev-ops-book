@@ -8,33 +8,16 @@ Hiera是基于键值查询的数据配置工具，Hiera是一个可选工具，�
 
 ### 1.1实例说明
 
-在使用hiera前，一个常见的manifests文件是这么编写的：
+在使用hiera前，一个常见的manifests的init.pp文件是这么编写的：
 
 ```
-node "kermit.example.com" {
-  class { "ntp":
-    servers    => [ '0.us.pool.ntp.org iburst','1.us.pool.ntp.org iburst','2.us.pool.ntp.org iburst','3.us.pool.ntp.org iburst'],
-    autoupdate => false,
-    restrict   => [],
-    enable     => true,
-  }
-}
+class openstack(
+  $enable_httpd = true,
+){
 
-node "grover.example.com" {
-  class { "ntp":
-    servers    => [ 'kermit.example.com','0.us.pool.ntp.org iburst','1.us.pool.ntp.org iburst','2.us.pool.ntp.org iburst'],
-    autoupdate => true,
-    restrict   => [],
-    enable     => true,
-  }
-}
-
-node "snuffie.example.com", "bigbird.example.com", "hooper.example.com" {
-  class { "ntp":
-    servers    => [ 'grover.example.com', 'kermit.example.com'],
-    autoupdate => true,
-    enable     => true,
-  }
+   if $enable_httpd {
+     package { 'httpd':}
+   }
 }
 ```
 
@@ -150,8 +133,6 @@ include myclass
 ```
 
 这里不用对myclass传递参数，myclass会自动读取Hiera中对parameter\_one定义的值，即$parameter\_one的值在调用时为'ustack'
-
-
 
 参考资料：
 
