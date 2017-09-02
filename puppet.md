@@ -141,6 +141,20 @@ openstacklocal
 test_hiera_domain: openstacklocal
 ```
 
+修改我们master的模块代码进行测试：
+
+```
+class openstack(
+  $enable_httpd = hiera('enable_httpd'),
+  $test_hiera_domain = hiera('test_hiera_domain'),
+){
+
+  notify { "$enable_httpd": }
+  notify { "$test_hiera_domain": }
+
+}
+```
+
 
 
 参考资料：
