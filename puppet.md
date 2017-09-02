@@ -75,7 +75,6 @@ class openstack(
   $enable_httpd = hiera('enable_httpd'),
 ){
 
-$enable_httpd = hiera('enable_httpd')
 notify { "$enable_httpd": }
 
 }
