@@ -21,15 +21,9 @@ class openstack(
 }
 ```
 
-在使用了Hiera之后，manifests文件发生了如下变化：
+如果有多个Puppet环境都调用了这个基础函数，有些环境希望打开httpd，有些则不希望打开httpd，我们怎么办呢？如果我们建立多套代码库，那么不利于后期维护，所以Puppet社区就想了一个方法，把这些参数的输入，全部单独独立出来，代码逻辑不变，但是你在外部输入了不同的变量，就可以走不通的代码逻辑。就是说，我希望有一个文件，可以根据不同的环境设定我们的enable\_httpd的值。这就是Puppet的hiera的数据配置的基础功能。
 
-```
-node "kermit.example.com", "grover.example.com", "snuffie.example.com" {
-  include ntp
-  # or:
-  # class { "ntp": }
-}
-```
+
 
 所有的数据设置移到了hiera中:
 
