@@ -8,4 +8,5 @@
 * [Puppet基础语法（2）](puppetji-chu-yu-fa-ff08-2.md)
 * [Puppet基础语法（3）](puppetji-chu-yu-fa-ff08-3.md)
 * [Puppet配置hiera数据源](puppet.md)
+* [Puppet多环境配置](ustack-puppetjia-gou.md)
 
