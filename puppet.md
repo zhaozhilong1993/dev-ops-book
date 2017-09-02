@@ -127,6 +127,8 @@ $text = hiera('enable_httpd')
    :datadir: /etc/puppet/hieradata
 ```
 
+之后查看我们的域名：
+
 ```
 [root@puppet-master puppet]# hostname -d
 openstacklocal
