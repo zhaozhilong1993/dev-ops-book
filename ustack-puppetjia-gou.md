@@ -37,7 +37,7 @@
     [master]
         environmentpath = $confdir/environments
 
-之后建立实际的environments环境：
+之后建立实际的environments环境的目录结构：
 
 ```
 [root@puppet-master puppet]# tree -L 4 environments/
@@ -57,6 +57,14 @@ environments/
             ├── spec
             ├── templates
             └── tests
+```
+
+我们需要告诉puppet这个环境的配置：
+
+```
+[root@puppet-master puppet]# cat environments/production/environments
+modulepath=/etc/puppet/environments/production/modules
+manifest=/etc/puppet/environments/production/manifests/cluster
 ```
 
 
