@@ -78,7 +78,17 @@ notify { "$enable_httpd": }
 
 }
 ```
-之后在agent中
+之后在agent中运行测试：
+```
+[root@puppet-agent ~]# puppet agent   -t --server puppet-master.openstacklocal
+Info: Retrieving pluginfacts
+Info: Retrieving plugin
+Info: Caching catalog for puppet-agent.openstacklocal
+Info: Applying configuration version '1504337788'
+Notice: true
+Notice: /Stage[main]/Openstack/Notify[true]/message: defined 'message' as 'true'
+Notice: Finished catalog run in 0.03 seconds
+```
 
 
 参考资料：
