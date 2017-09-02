@@ -165,6 +165,10 @@ Notice: /Stage[main]/Openstack/Notify[openstacklocal]/message: defined 'message'
 Notice: Finished catalog run in 0.03 seconds
 ```
 
+我们能看到这里的运行结果就是对的。
+
+
+
 参考资料：
 
 [http://docs.puppetlabs.com/hiera/latest/](http://docs.puppetlabs.com/hiera/latest/)
