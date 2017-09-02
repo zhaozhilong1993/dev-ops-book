@@ -72,7 +72,7 @@ enable_httpd: true
 
 ```
 class openstack(
-  $enable_httpd = false,
+  $enable_httpd = hiera('enable_httpd'),
 ){
 
 $enable_httpd = hiera('enable_httpd')
@@ -99,8 +99,6 @@ Notice: Finished catalog run in 0.03 seconds
 ```
 $text = hiera('enable_httpd')
 ```
-
-
 
 参考资料：
 
