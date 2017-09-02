@@ -117,6 +117,7 @@ $text = hiera('enable_httpd')
 :backends:
   - yaml
 :hierarchy:
+  - "global/base"
   - "%{::domain}/base"
 :yaml:
 # datadir is empty here, so hiera uses its defaults:
