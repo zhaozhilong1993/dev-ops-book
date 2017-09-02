@@ -46,7 +46,7 @@ environments/
     ├── environments
     ├── manifests
     │   └── cluster
-    │       └── hf.pp # 这个就是我们的node.pp的文件
+    │       └── ustack.pp # 这个就是我们的node.pp的文件
     └── modules
         └── ustack-openstack
             ├── Gemfile
@@ -73,6 +73,16 @@ manifest=/etc/puppet/environments/production/manifests/cluster
 
 ```
 [root@puppet-master puppet]# cp -r /etc/puppet/modules/ustack-openstack/ /etc/puppet/environments/production/modules/
+```
+
+再定义我们的node文件，这里我把node文件改名成ustack.pp其实名字是什么都行，都可以读得到：
+
+```
+[root@puppet-master puppet]# cat environments/production/manifests/cluster/ustack.pp
+node "puppet-agent.openstacklocal" {   
+   # 注意这里，因为用了多模块的配置，你这里需要重新定义你的module的名字，如果用openstack这个名字是找不到这个module的
+   include ustack-openstack::openstack 
+}
 ```
 
 
