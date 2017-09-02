@@ -45,34 +45,21 @@ hiera.yaml是Hiera唯一的配置文件，它其中只有少数几个配置参�
 /etc/puppet/hiera.yaml
 ```
 
-### 2.2参数详解
-
-以下为hiera.yaml配置文件的默认值:
+接下来我们就自己建立一个hiera.yaml文件：
 
 ```
+[root@puppet-master puppet]# cat hiera.yaml
 ---
-:backends: yaml
-:yaml:
-  # on *nix:
-  :datadir: "/etc/puppetlabs/code/environments/%{environment}/hieradata"
-  # on Windows:
-  :datadir: "C:\ProgramData\PuppetLabs\code\environments\%{environment}\hieradata"
+:backends:
+  - yaml
 :hierarchy:
-  - "nodes/%{::trusted.certname}"
-  - "common"
-:logger: console
-:merge_behavior: native
-:deep_merge_options: {}
-```
-
-对于这个路径 ： /etc/puppetlabs/code/environments/%{environment}/hieradata 它其实是一个目录，这个目录下面就需要的数据文件符合下面的格式:  
-nodes/%{::trusted.certname}.yaml \[这个是动态路径，所以我就不全部写出来了\]  
-common.yaml \[对应是嗯面的hierarchy里面的common\]  
-上面的%{environment}其实是puppet的环境变量，一般都有默认值，可以使用下面的命令进程查看:
-
-```
-# puppet master --configprint environment
-production
+  - "global/base"
+:yaml:
+# datadir is empty here, so hiera uses its defaults:
+#  - /var/lib/hiera on *nix
+#  - %CommonAppData%\PuppetLabs\hiera\var on Windows
+#  When specifying a datadir, make sure the directory exists.
+   :datadir: /etc/puppet/hieradata
 ```
 
 ## 3.自动查找hiera数据源
