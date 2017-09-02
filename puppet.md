@@ -67,18 +67,22 @@ hiera.yaml是Hiera唯一的配置文件，它其中只有少数几个配置参�
 [root@puppet-master puppet]# cat /etc/puppet/hieradata/openstacklocal/base.yaml
 enable_httpd: true
 ```
+
 之后在module中设置：
+
 ```
 class openstack(
   $enable_httpd = false,
 ){
 
-$text = hiera('enable_httpd')
+$enable_httpd = hiera('enable_httpd')
 notify { "$enable_httpd": }
 
 }
 ```
+
 之后在agent中运行测试：
+
 ```
 [root@puppet-agent ~]# puppet agent   -t --server puppet-master.openstacklocal
 Info: Retrieving pluginfacts
@@ -89,6 +93,13 @@ Notice: true
 Notice: /Stage[main]/Openstack/Notify[true]/message: defined 'message' as 'true'
 Notice: Finished catalog run in 0.03 seconds
 ```
+
+我们发现已经可以通过
+
+```
+$text = hiera('enable_httpd')
+```
+
 
 
 参考资料：
