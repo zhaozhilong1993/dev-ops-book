@@ -25,6 +25,15 @@ yum install ansible
 
 ```
 #ansible ustack -m ping
+ansible ustack -m ping
+The authenticity of host '172.16.0.36 (172.16.0.36)' can't be established.
+ECDSA key fingerprint is ab:c4:10:e7:6d:8d:ce:03:37:a4:bf:bc:01:b9:61:f4.
+Are you sure you want to continue connecting (yes/no)? yes
+172.16.0.36 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: Warning: Permanently added '172.16.0.36' (ECDSA) to the list of known hosts.\r\nPermission denied (publickey,password).\r\n",
+    "unreachable": true
+}
 ```
 
 参考资料：
