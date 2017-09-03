@@ -21,7 +21,7 @@ yum install ansible
 172.16.0.36
 ```
 
-之后尝试执行我们的第一条命令：
+之后尝试执行我们的第一条命令,我们会发现有ssh连接不上的error.
 
 ```
 #ansible ustack -m ping
