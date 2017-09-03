@@ -14,4 +14,5 @@
   * [Ansible简单使用](puppetda-jian/ansiblepei-xun-jiao-cai/ansiblejian-dan-shi-yong.md)
   * [Ansible的 inventory 文件配置](puppetda-jian/ansiblepei-xun-jiao-cai/ansiblede-inventory-wen-jian-pei-zhi.md)
   * [Ansible的强大之处Playbooks](puppetda-jian/ansiblede-qiang-da-zhi-chu-playbooks.md)
+    * [Playbooks的基础语法](puppetda-jian/ansiblede-qiang-da-zhi-chu-playbooks/playbooksde-ji-chu-yu-fa.md)
 
