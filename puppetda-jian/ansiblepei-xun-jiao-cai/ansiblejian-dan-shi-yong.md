@@ -36,6 +36,25 @@ Are you sure you want to continue connecting (yes/no)? yes
 }
 ```
 
+因为ansible是一个封装了ssh的脚步工具，在连接每一台ansible的slave主机的时候都需要配置ssh的免秘钥登陆。
+
+```
+#ssh-keygen
+#ssh-copy-id 172.16.0.36
+```
+
+配置好免秘钥登陆之后，就可以正常执行我们的ansible命令了。
+
+```
+# ansible ustack -m ping
+172.16.0.36 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+} 
+```
+
+
+
 参考资料：
 
 [http://www.ansible.com.cn/docs/intro.html](http://www.ansible.com.cn/docs/intro.html)
