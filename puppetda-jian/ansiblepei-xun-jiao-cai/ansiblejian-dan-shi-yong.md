@@ -55,9 +55,9 @@ Are you sure you want to continue connecting (yes/no)? yes
 
 
 
-
-
 参考资料：
+
+【强烈推介】这下面的链接是ansible的官方文档，很详细。
 
 [http://www.ansible.com.cn/docs/intro.html](http://www.ansible.com.cn/docs/intro.html)
 
