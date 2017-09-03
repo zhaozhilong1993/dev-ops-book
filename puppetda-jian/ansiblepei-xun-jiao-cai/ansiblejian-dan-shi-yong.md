@@ -21,7 +21,11 @@ yum install ansible
 172.16.0.36
 ```
 
+之后尝试执行我们的第一条命令：
 
+```
+#ansible ustack -m ping
+```
 
 参考资料：
 
