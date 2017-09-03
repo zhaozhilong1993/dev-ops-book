@@ -12,4 +12,5 @@
   * [Puppet多环境配置](ustack-puppetjia-gou.md)
 * [Ansible培训教材](puppetda-jian/ansiblepei-xun-jiao-cai.md)
   * [Ansible简单使用](puppetda-jian/ansiblepei-xun-jiao-cai/ansiblejian-dan-shi-yong.md)
+  * [Ansible的 inventory 文件配置](puppetda-jian/ansiblepei-xun-jiao-cai/ansiblede-inventory-wen-jian-pei-zhi.md)
 
