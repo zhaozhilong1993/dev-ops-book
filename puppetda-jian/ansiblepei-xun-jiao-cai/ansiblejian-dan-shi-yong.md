@@ -7,13 +7,15 @@ ansible实验环境
 | ansible-master | 172.16.0.33 |
 | ansible-agent | 172.16.0.36 |
 
-
-
 在ansible-maste上安装ansible
 
 ```
 yum install ansible
 ```
+
+
+
+参考资料：
 
 [http://www.ansible.com.cn/docs/intro.html](http://www.ansible.com.cn/docs/intro.html)
 
