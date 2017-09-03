@@ -17,5 +17,5 @@
     * [Playbooks的基础语法](puppetda-jian/ansiblede-qiang-da-zhi-chu-playbooks/playbooksde-ji-chu-yu-fa.md)
 * [foreman培训教材](puppetda-jian/foremanpei-xun-jiao-cai.md)
   * [Linux系统启动原理](puppetda-jian/foremanpei-xun-jiao-cai/linuxxi-tong-qi-dong-yuan-li.md)
-  * PXE原理
+  * [PXE原理](puppetda-jian/foremanpei-xun-jiao-cai/pxeyuan-li.md)
 
