@@ -23,8 +23,6 @@ yum install ansible
 
 
 
-
-
 参考资料：
 
 [http://www.ansible.com.cn/docs/intro.html](http://www.ansible.com.cn/docs/intro.html)
