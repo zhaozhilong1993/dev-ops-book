@@ -11,8 +11,6 @@
 | compute |  |
 | ceph |  |
 
-
-
 安装yum源
 
 ```
@@ -22,13 +20,14 @@
 之后更新机器
 
 ```
-# yum update 
+# yum update
 ```
 
 接着把openstack的命令行工具也装上
 
 ```
 # yum install python-openstackclient
+# yum install openstack-selinux
 ```
 
 
