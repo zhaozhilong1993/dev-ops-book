@@ -23,7 +23,7 @@
 # yum update
 ```
 
-接着把openstack的命令行工具也装上
+接着把openstack的命令行工具和openstack-selinux这个对selinux的管理工具也装上
 
 ```
 # yum install python-openstackclient
