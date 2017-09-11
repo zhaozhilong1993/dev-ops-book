@@ -13,5 +13,26 @@
 # yum install pcs pacemaker -y
 ```
 
-做身份验证
+做身份验证：
+
+```
+# ssh-keygen
+# ssh-copy-id root@192.168.101.11
+# ssh-copy-id root@192.168.101.12
+```
+
+pcs安装完之后默认会有一个hacluster用户，我们要用这个用户管理pcs集群，所以需要给他一个密码：
+
+```
+# passwd hacluster
+```
+
+之后验证节点：
+
+```
+# pcs cluster auth devstack-1
+# pcs cluster auth devstack-2
+```
+
+
 
