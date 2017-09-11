@@ -21,7 +21,107 @@ devstack-2 192.168.101.12
 # yum install -y rabbitmq-server
 ```
 
+# RabbitMQ集群配置
 
+集群配置在单机配置完成的基础上进行
 
+* ### 添加/etc/hosts条目
+
+在server1、server2、server3里的/etc/hosts文件中分别添加：
+
+```
+10.10
+.
+10.11
+   server1
+
+10.10
+.
+10.12
+   server2
+
+10.10
+.
+10.13
+   server3
+```
+
+* **设置每个节点Cookie**
+
+Rabbitmq的集群是依赖于erlang的集群来工作的，所以必须先构建起erlang的集群环境。Erlang的集群中各节点是通过一个magic cookie来实现的，这个cookie存放在 /var/lib/rabbitmq/.erlang.cookie 中，文件是400的权限。所以必须保证各节点cookie保持一致，否则节点之间就无法通信
+
+```
+# 
+chmod
+700
+ /var/lib/rabbitmq/
+.erlang.cookie
+# echo -n "AZVOCZYZZBVFLBPTBXU" 
+>
+ /var/lib/rabbitmq/.erlang.cookie
+
+# 
+chmod
+400
+ /var/lib/rabbitmq/.erlang.cookie
+```
+
+建议在RabbitMQ服务启动前修改过cookie，如果RabbitMQ服务已经启动，修改cookie值后，必须重启RabbitMQ服务，这步很关键
+
+```
+# 
+ps
+ -ef | 
+grep
+ ^rabbitmq | awk '{print $2}' | 
+xargs
+kill
+ -
+9
+
+# service rabbitmq
+-server start
+```
+
+* **开通防火墙上集群通信端口**
+
+```
+# firewall-cmd --permanent --add-port={
+4369
+/tcp,
+25672
+/
+tcp}
+# firewall
+-cmd --reload
+```
+
+* **加入集群**
+
+将 server1、server2 、server3组成集群：
+
+默认是磁盘节点，如果是内存节点的话，需要加--ram参数
+
+在server2、server3上分别运行：
+
+```
+# rabbitmqctl stop_app
+# rabbitmqctl join_cluster rabbit@server1
+# rabbitmqctl start_app
+```
+
+* **设置镜像策略**
+
+```
+# rabbitmqctl set_policy ha-all 
+"
+^
+"
+'
+{"ha-mode":"all","ha-sync-mode":"automatic"}
+'
+```
+
+  
 
 
