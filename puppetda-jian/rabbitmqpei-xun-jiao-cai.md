@@ -15,5 +15,13 @@ devstack-2 192.168.101.12
 # yum install -y centos-release-openstack-ocata
 ```
 
+安装rabbitmq-server
+
+```
+# yum install -y rabbitmq-server
+```
+
+
+
 
 
