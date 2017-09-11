@@ -9,5 +9,11 @@ devstack-1 192.168.101.11
 devstack-2 192.168.101.12
 ```
 
+安装yum源
+
+```
+# yum install -y centos-release-openstack-ocata
+```
+
 
 
