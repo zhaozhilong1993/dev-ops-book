@@ -19,5 +19,6 @@
   * [Ansible的强大之处Playbooks](puppetda-jian/ansiblede-qiang-da-zhi-chu-playbooks.md)
     * [Playbooks的基础语法](puppetda-jian/ansiblede-qiang-da-zhi-chu-playbooks/playbooksde-ji-chu-yu-fa.md)
 * [OpenStack的安装与部署](puppetda-jian/openstackde-an-zhuang-yu-bu-shu.md)
+* [高可用培训教材](puppetda-jian/gao-ke-yong-pei-xun-jiao-cai.md)
 * [RabbitMQ培训教材](puppetda-jian/rabbitmqpei-xun-jiao-cai.md)
 
