@@ -13,6 +13,13 @@
 # yum install pcs pacemaker -y
 ```
 
+启动pcs:
+
+```
+systemctl start pcsd
+systemctl enable pcsd
+```
+
 做身份验证：
 
 ```
