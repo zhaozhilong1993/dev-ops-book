@@ -45,7 +45,7 @@ Rabbitmq的集群是依赖于erlang的集群来工作的，所以必须先构建
 
 ```
 # rabbitmqctl stop_app
-# rabbitmqctl join_cluster rabbit@server1
+# rabbitmqctl join_cluster rabbit@devstack-1
 # rabbitmqctl start_app
 ```
 
