@@ -41,5 +41,11 @@ pcs安装完之后默认会有一个hacluster用户，我们要用这个用户�
 # pcs cluster auth devstack-2
 ```
 
+之后初始化集群，并启动集群：
+
+```
+ # pcs cluster setup --start --name my_hacluster devstack-1 devstack-2 --force
+```
+
 
 
