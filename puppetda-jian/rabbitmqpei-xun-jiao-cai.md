@@ -6,7 +6,7 @@
 
 ```
 192.168.101.11 devstack-1 
-192.168.101.12 devstack-2 
+192.168.101.12 devstack-2
 ```
 
 安装yum源
@@ -52,13 +52,7 @@ Rabbitmq的集群是依赖于erlang的集群来工作的，所以必须先构建
 **设置镜像策略**
 
 ```
-# rabbitmqctl set_policy ha-all 
-"
-^
-"
-'
-{"ha-mode":"all","ha-sync-mode":"automatic"}
-'
+# rabbitmqctl set_policy ha-all "^" '{"ha-mode":"all","ha-sync-mode":"automatic"}'
 ```
 
 
