@@ -83,7 +83,7 @@ node1节点修改如下：
 <html>
 <body>Hello node1</body>
 </html>
- 
+
 END
 node2节点修改如下：
 
@@ -91,7 +91,7 @@ node2节点修改如下：
 <html>
 <body>Hello node2</body>
 </html>
- 
+
 END
 下面语句是将httpd作为资源添加到集群中：
 
@@ -100,5 +100,7 @@ END
 
 
 
+参考资料：
 
+https://access.redhat.com/documentation/zh-CN/Red\_Hat\_Enterprise\_Linux/7/html/High\_Availability\_Add-On\_Reference/s1-resourcedisplay-HAAR.html
 
