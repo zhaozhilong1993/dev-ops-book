@@ -41,7 +41,7 @@ Rabbitmq的集群是依赖于erlang的集群来工作的，所以必须先构建
 
 默认是磁盘节点，如果是内存节点的话，需要加--ram参数
 
-在server2、server3上分别运行：
+在devstack-1、devstack-2 上分别运行：
 
 ```
 # rabbitmqctl stop_app
