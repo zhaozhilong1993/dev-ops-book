@@ -37,7 +37,7 @@ Rabbitmq的集群是依赖于erlang的集群来工作的，所以必须先构建
 
 **加入集群**
 
-将 server1、server2 、server3组成集群：
+将devstack-1、devstack-2 组成集群：
 
 默认是磁盘节点，如果是内存节点的话，需要加--ram参数
 
