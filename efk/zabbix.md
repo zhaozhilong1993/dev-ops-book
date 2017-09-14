@@ -26,6 +26,8 @@ $ mysql
 $ /usr/bin/zcat /usr/share/doc/zabbix-server-mysql-3.0.5／create.sql.gz | mysql -uzabbix -pzabbix zabbix
 ```
 
+
+
 ```
 $ vim /etc/zabbix/zabbix_server.conf
 ...
