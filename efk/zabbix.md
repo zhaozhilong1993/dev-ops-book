@@ -99,6 +99,10 @@ systemctl enable zabbix-server
 systemctl start zabbix-server
 ```
 
+```
+systemctl restart httpd
+```
+
 ## zabbix的面板介绍
 
 ## 添加监控主机
