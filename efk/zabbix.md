@@ -6,7 +6,18 @@ zabbix是现在很流行的监控组件。相比之前的cacti + ganglia + nagio
 ## 安装zabbix
 
 ```
-$ yum install zabbix mariadb-server
+$ yum install -y zabbix mariadb-server
+
+$ systemctl start mariadb
+$ mysql
+> create database zabbix;
+> GRANT ALL PRIVILEGES ON zabbix.* TO 'zabbix'@'localhost' \
+  IDENTIFIED BY 'zabbix';
+> GRANT ALL PRIVILEGES ON zabbix.* TO 'zabbix'@'%' \
+  IDENTIFIED BY 'zabbix';
+  
+$ 
+
 $ vim /etc/zabbix/zabbix_server.conf
 ...
 LogFile=/var/log/zabbix/zabbix_server.log
