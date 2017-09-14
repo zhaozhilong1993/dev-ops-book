@@ -26,7 +26,7 @@ $ mysql
 $ /usr/bin/zcat /usr/share/doc/zabbix-server-mysql-3.0.5／create.sql.gz | mysql -uzabbix -pzabbix zabbix
 ```
 
-
+之后编辑配置文件
 
 ```
 $ vim /etc/zabbix/zabbix_server.conf
