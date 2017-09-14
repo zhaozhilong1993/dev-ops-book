@@ -5,6 +5,8 @@ zabbix是现在很流行的监控组件。相比之前的cacti + ganglia + nagio
 
 ## 安装zabbix
 
+先更新
+
 ```
 $ yum install -y zabbix mariadb-server
 ```
@@ -21,7 +23,7 @@ $ mysql
   IDENTIFIED BY 'zabbix';
 
 # 同步数据库
-$ /usr/bin/zcat /usr/share/doc/zabbix-server-mysql-3.0.5／create.sql.gz | mysql -uzabbix -pzabbix zabbix 2> /dev/null
+$ /usr/bin/zcat /usr/share/doc/zabbix-server-mysql-3.0.5／create.sql.gz | mysql -uzabbix -pzabbix zabbix
 ```
 
 ```
