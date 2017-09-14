@@ -12,7 +12,6 @@ $ yum install -y zabbix mariadb-server
 初始化数据库
 
 ```
-
 $ systemctl start mariadb
 $ mysql
 > create database zabbix;
@@ -21,11 +20,9 @@ $ mysql
 > GRANT ALL PRIVILEGES ON zabbix.* TO 'zabbix'@'%' \
   IDENTIFIED BY 'zabbix';
 
-
+# 同步数据库
 $ /usr/bin/zcat /usr/share/doc/zabbix-server-mysql-3.0.5／create.sql.gz | mysql -uzabbix -pzabbix zabbix 2> /dev/null
 ```
-
-
 
 ```
 $ vim /etc/zabbix/zabbix_server.conf
