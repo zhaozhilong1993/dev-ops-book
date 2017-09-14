@@ -5,10 +5,15 @@ zabbix是现在很流行的监控组件。相比之前的cacti + ganglia + nagio
 
 ## 安装zabbix
 
-先更新
-
 ```
-$ yum install -y zabbix mariadb-server
+# 安装zabbix的源
+$ rpm -ivh http://repo.zabbix.com/zabbix/3.0/rhel/7/x86_64/zabbix-release-3.0-1.el7.noarch.rpm
+
+# 更新环境
+$ yum update -y
+
+# 安装zabbix
+$ yum install -y zabbix-server-mysql.x86_64 zabbix-web-mysql.noarch zabbix-get.x86_64 -y mariadb-server
 ```
 
 初始化数据库
@@ -49,6 +54,8 @@ ExternalScripts=/usr/lib/zabbix/externalscripts
 LogSlowQueries=3000
 ...
 ```
+
+
 
 ## zabbix的面板介绍
 
