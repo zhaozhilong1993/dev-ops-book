@@ -17,7 +17,7 @@
   * [Ansible简单使用](puppetda-jian/ansiblepei-xun-jiao-cai/ansiblejian-dan-shi-yong.md)
   * [Ansible的 inventory 文件配置](puppetda-jian/ansiblepei-xun-jiao-cai/ansiblede-inventory-wen-jian-pei-zhi.md)
   * [Ansible的强大之处Playbooks](puppetda-jian/ansiblede-qiang-da-zhi-chu-playbooks.md)
-     * [Playbooks的基础语法](puppetda-jian/ansiblede-qiang-da-zhi-chu-playbooks/playbooksde-ji-chu-yu-fa.md)
+    * [Playbooks的基础语法](puppetda-jian/ansiblede-qiang-da-zhi-chu-playbooks/playbooksde-ji-chu-yu-fa.md)
 * [OpenStack的安装与部署](puppetda-jian/openstackde-an-zhuang-yu-bu-shu.md)
 * [高可用培训教材](puppetda-jian/gao-ke-yong-pei-xun-jiao-cai.md)
   * [Pacemaker](puppetda-jian/gao-ke-yong-pei-xun-jiao-cai/pacemaker.md)
@@ -25,7 +25,6 @@
 * [Docker培训教材](docker/docker.md)
 * [EFK培训教材](efk/efk.md)
   * [zabbix](efk/zabbix.md)
+    * [zabbix的使用](efk/zabbix/zabbixde-shi-yong.md)
   * [elasticsearch](efk/elasticsearch.md)
-
-
 
