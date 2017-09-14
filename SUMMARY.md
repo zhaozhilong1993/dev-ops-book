@@ -26,5 +26,6 @@
 * [EFK培训教材](efk/efk.md)
   * [zabbix](efk/zabbix.md)
     * [zabbix的使用](efk/zabbix/zabbixde-shi-yong.md)
+    * [zabbix的安装部署](efk/zabbix/zabbixde-an-zhuang-bu-shu.md)
   * [elasticsearch](efk/elasticsearch.md)
 
