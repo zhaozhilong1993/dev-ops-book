@@ -1,10 +1,12 @@
 # zabbix
-zabbix是现在很流行的监控组件。相比之前的cacti + ganglia + nagios这三个大套件，zabbix相对来说功能更全，操作，部署
+
+zabbix是现在很流行的监控组件。相比之前的cacti + ganglia + nagios这三个大套件，zabbix相对来说功能更全，操作，部署  
 更为简单.
 
 ## 安装zabbix
+
 ```
-$ yum install zabbix mariadb
+$ yum install zabbix mariadb-server
 $ vim /etc/zabbix/zabbix_server.conf
 ...
 LogFile=/var/log/zabbix/zabbix_server.log
@@ -37,3 +39,6 @@ LogSlowQueries=3000
 ## 配置zabbix-proxy
 
 ## 配置报警
+
+
+
