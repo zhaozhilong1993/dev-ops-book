@@ -7,6 +7,11 @@ zabbix是现在很流行的监控组件。相比之前的cacti + ganglia + nagio
 
 ```
 $ yum install -y zabbix mariadb-server
+```
+
+初始化数据库
+
+```
 
 $ systemctl start mariadb
 $ mysql
@@ -15,9 +20,14 @@ $ mysql
   IDENTIFIED BY 'zabbix';
 > GRANT ALL PRIVILEGES ON zabbix.* TO 'zabbix'@'%' \
   IDENTIFIED BY 'zabbix';
-  
-$ 
 
+
+$ /usr/bin/zcat /usr/share/doc/zabbix-server-mysql-3.0.5／create.sql.gz | mysql -uzabbix -pzabbix zabbix 2> /dev/null
+```
+
+
+
+```
 $ vim /etc/zabbix/zabbix_server.conf
 ...
 LogFile=/var/log/zabbix/zabbix_server.log
