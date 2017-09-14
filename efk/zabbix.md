@@ -91,7 +91,13 @@ Alias /zabbix /usr/share/zabbix
 </Directory>
 ```
 
+启动zabbix
 
+```
+systemctl enable zabbix-server
+
+systemctl start zabbix-server
+```
 
 ## zabbix的面板介绍
 
