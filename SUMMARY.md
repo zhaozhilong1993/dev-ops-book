@@ -24,6 +24,8 @@
 * [RabbitMQ培训教材](puppetda-jian/rabbitmqpei-xun-jiao-cai.md)
 * [Docker培训教材](docker/docker.md)
 * [EFK培训教材](efk/efk.md)
+  * [zabbix](efk/zabbix.md)
+  * [elasticsearch](efk/elasticsearch.md)
 
 
 
