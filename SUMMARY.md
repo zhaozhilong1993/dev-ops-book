@@ -31,5 +31,5 @@
     * [zabbix的使用](efk/zabbix/zabbixde-shi-yong.md)
   * [elasticsearch](efk/elasticsearch.md)
 * OpenStack培训教材
-* [OpenStack的安装与部署](puppetda-jian/openstackde-an-zhuang-yu-bu-shu.md)
+  * [OpenStack的安装与部署](puppetda-jian/openstackde-an-zhuang-yu-bu-shu.md)
 
