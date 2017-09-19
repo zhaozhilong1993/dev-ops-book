@@ -24,6 +24,8 @@
   * [RabbitMQ培训教材](puppetda-jian/rabbitmqpei-xun-jiao-cai.md)
   * [Keepalived+Haproxy](puppetda-jian/gao-ke-yong-pei-xun-jiao-cai/keepalived+haproxy.md)
 * [Docker培训教材](docker/docker.md)
+  * k8s集群搭建
+  * OpenStack对Docker的支持
 * [EFK培训教材](efk/efk.md)
   * [zabbix](efk/zabbix.md)
     * [zabbix的安装部署](efk/zabbix/zabbixde-an-zhuang-bu-shu.md)
