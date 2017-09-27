@@ -65,7 +65,7 @@ class openstack(
 [root@puppet-master modules]# cat ustack-openstack/manifests/vsftpd.pp |grep -v ^#
 
 ## 注意这里的类名称一定要以<模块名>::类名来作区分
-class ustacl-openstack::vsftpd(
+class ustack-openstack::vsftpd(
   $enable_vsftpd = true,
 ){
 
@@ -77,8 +77,4 @@ class ustacl-openstack::vsftpd(
 ```
 
 值得注意的一点是，类的名字一定要以&lt;模块名&gt;::类名来作区分，不然，如果你在有很多个模块的时候，如果你写了一个类似class vstfpd这样的类，Puppet就不知道怎么去找这个类了。
-
-
-
-
 
