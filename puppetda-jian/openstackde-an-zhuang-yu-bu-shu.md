@@ -9,9 +9,6 @@
 | controller |  |
 | network |  |
 | compute |  |
-| ceph |  |
-
-
 
 安装yum源
 
@@ -31,8 +28,6 @@
 # yum install python-openstackclient
 # yum install openstack-selinux
 ```
-
-
 
 Controller节点：
 
