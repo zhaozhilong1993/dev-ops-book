@@ -15,7 +15,7 @@
 创建签署证书的文件
 
 ```
-[root@puppet-master puppet]# echo "*" /etc/puppet/autosign.conf
+[root@puppet-master puppet]# echo "*" > /etc/puppet/autosign.conf
 [root@puppet-master puppet]# cat /etc/puppet/autosign.conf
 *
 ```
