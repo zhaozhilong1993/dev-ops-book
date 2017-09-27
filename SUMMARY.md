@@ -32,7 +32,8 @@
   * [elasticsearch](efk/elasticsearch.md)
 * [OpenStack培训教材](puppetda-jian/openstackpei-xun-jiao-cai.md)
   * [OpenStack的安装与部署](puppetda-jian/openstackde-an-zhuang-yu-bu-shu.md)
-  * [OpenStack权限定制](puppetda-jian/openstackquan-xian-ding-zhi.md)
+  * [Keystone](puppetda-jian/keystone.md)
+    * [OpenStack权限定制](puppetda-jian/openstackquan-xian-ding-zhi.md)
   * [网络资源的定位](puppetda-jian/wang-luo-zi-yuan-de-ding-wei.md)
   * [虚拟机镜像制作](puppetda-jian/xu-ni-ji-jing-xiang-zhi-zuo.md)
   * 虚拟机的迁移
