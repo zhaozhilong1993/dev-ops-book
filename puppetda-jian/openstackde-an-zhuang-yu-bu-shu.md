@@ -1,40 +1,43 @@
-# OpenStack的安装与部署【L版】
+# OpenStack的安装与部署【N版】
 
-安装前准备
+## Packstack安装
 
 节点规划
 
 | 角色 | IP |
 | :--- | :--- |
-| controller |  |
-| network |  |
-| compute |  |
+| controller | 192.168.20.27 |
+| network | 192.168.20.27 |
+| compute | 192.168.20.27 |
 
 安装yum源
 
 ```
-# yum install centos-release-openstack-liberty
+# yum install centos-release-openstack-newton
 ```
 
-之后更新机器
+之后安装packstack
 
 ```
-# yum update
+# yum install packstack-openstack -y
 ```
 
-接着把openstack的命令行工具和openstack-selinux这个对selinux的管理工具也装上
+之后生成配置文件
 
 ```
-# yum install python-openstackclient
-# yum install openstack-selinux
+# packstack --gen-answer-file=/root/ans.txt
 ```
 
-Controller节点：
-
-安装数据库：
+之后修改配置文件，指定安装的模块与用户密码等等
 
 ```
+# vim /root/ans.txt
+```
 
+之后运行packstack
+
+```
+# packstack --answer-file=/root/ans.txt
 ```
 
 
