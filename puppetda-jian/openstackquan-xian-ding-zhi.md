@@ -7,9 +7,9 @@
 ```
 我们可以看到我们一个项目(project下面会有多个user)
 
-ustack1() ------|
-                |-- ustack (project)
-ustack2() ------|
+ustack1(admin) ------|
+                     |-- ustack (project)
+ustack2()      ------|
 ```
 
 基本操作：
