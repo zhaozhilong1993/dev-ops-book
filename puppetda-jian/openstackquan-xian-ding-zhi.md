@@ -2,9 +2,25 @@
 
 在keystone中，是通过调用API的权限来控制一个用户的权限。
 
-一个user针对一个project有什么样的role。就有什么样的权限。
+一个user针对一个project有什么样的role。就有什么样的权限。所以说权限对应的是role,也就是我们说的角色。
 
-user / tenant or project / role
+
+
+基本操作：
+
+```
+创建用户
+# openstack user create <user_name>
+
+创建项目
+# openstack project create <project_name>
+
+创建角色
+# openstack role create <role_name>
+
+绑定用户角色
+# openstack user role add <user_name> <role_name>
+```
 
 token 去验证一个用户的身份
 
