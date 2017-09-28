@@ -4,8 +4,6 @@
 
 一个user针对一个project有什么样的role。就有什么样的权限。所以说权限对应的是role,也就是我们说的角色。
 
-
-
 基本操作：
 
 ```
@@ -20,7 +18,16 @@
 
 绑定用户角色
 # openstack user role add <user_name> <role_name>
+
+列出某个项目下面某个用户的角色列表
+openstack role assignment list --projetc <project_name> --user <user_name>
 ```
+
+
+
+
+
+
 
 token 去验证一个用户的身份
 
@@ -36,21 +43,7 @@ openstack project list
 
 openstack role list
 
-openstack role assignment list --projetc
 
-&lt;
-
-project
-
-&gt;
-
---user
-
-&lt;
-
-user
-
-&gt;
 
 每个项目项目下面的policy.json：
 
