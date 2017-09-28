@@ -19,7 +19,7 @@
 之后安装packstack
 
 ```
-# yum install packstack-openstack -y
+# yum install openstack-packstack -y
 ```
 
 之后生成配置文件
