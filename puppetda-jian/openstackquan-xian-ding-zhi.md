@@ -9,7 +9,7 @@
 
 ustack1(admin) ------|
                      |-- ustack (project)
-ustack2(member)      ------|
+ustack2(menber) -----|
 ```
 
 基本操作：
