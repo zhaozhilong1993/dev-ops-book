@@ -1,5 +1,9 @@
 # OpenStack权限定制
 
+在keystone中，是通过调用API的权限来控制一个用户的权限。
+
+一个user针对一个project有什么样的role。就有什么样的权限。
+
 user / tenant or project / role
 
 token 去验证一个用户的身份
