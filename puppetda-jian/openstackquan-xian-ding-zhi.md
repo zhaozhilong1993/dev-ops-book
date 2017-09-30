@@ -51,9 +51,7 @@ nova --debug list
 # curl -H "X-Auth-Token: " http://xxx:xxx
 ```
 
-
-
-
+到目前为止，我们知道了，使用API的时候需要加上用户的token,然后token对应一个用户的用户身份，一个用户的用户身份又对应了：user -&gt; role -&gt; project的这样的关系。所以说对一个API有没有调用的权限，要看的还是用户的角色（role）。
 
 当你的一个user 对一个project 有对应的role的时候，你就有对应的
 
