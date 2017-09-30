@@ -48,8 +48,10 @@ nova --debug list
 # openstack token issue
 
 
-# curl -H "X-Auth-Token: "
+# curl -H "X-Auth-Token: " http://xxx:xxx
 ```
+
+
 
 
 
