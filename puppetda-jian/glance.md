@@ -9,5 +9,5 @@ cinder主要有4个进程组成：
 * cinder-backup：
 * cinder-scheduler：
 
-cinder其实只是一个抽象层，它本身并不是一种存储技术。
+cinder其实只是一个抽象层，它本身并不是一种存储技术，它为其他真正的存储技术，如：SAN，Ceph，NAS等等，提供了统一化的接口。
 
