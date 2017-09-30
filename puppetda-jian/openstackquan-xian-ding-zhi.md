@@ -63,5 +63,5 @@ nova --debug list
 "volume:delete": "rule:admin_or_owner",
 ```
 
-我们
+我们在每一个项目里面，我们经常会去自定义一个我们自己的一个用户角色，那我们怎么去定义这个用户有什么样的用户权限。
 
