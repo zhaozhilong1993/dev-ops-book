@@ -12,7 +12,7 @@ ustack1(admin) ------|
 ustack2(member) -----|
 ```
 
-基本操作：
+Keystone基本操作：
 
 ```
 创建用户
@@ -31,7 +31,27 @@ ustack2(member) -----|
 openstack role assignment list --projetc <project_name> --user <user_name>
 ```
 
-token 去验证一个用户的身份
+Keystone的token
+
+Keystone中使用token 去验证一个用户的身份，就是一个token就是一个用户的一个身份证明，就跟古代的令牌一个样。
+
+我们可以看到，我们在使用每一个API请求的时候都会大带上对应的token。如：
+
+```
+nova --debug list
+```
+
+我们会看到最后调用nova的API的时候都会带上: X-Auth-Token的httpd的头部标志。我们可以使用curl命令来尝试使用这个token。
+
+```
+获取token
+# openstack token issue
+
+
+# curl -H "X-Auth-Token: "
+```
+
+
 
 当你的一个user 对一个project 有对应的role的时候，你就有对应的
 
