@@ -51,21 +51,9 @@ nova --debug list
 # curl -H "X-Auth-Token: " http://xxx:xxx
 ```
 
-到目前为止，我们知道了，使用API的时候需要加上用户的token,然后token对应一个用户的用户身份，一个用户的用户身份又对应了：user -&gt; role -&gt; project的这样的关系。所以说对一个API有没有调用的权限，要看的还是用户的角色（role）。
+到目前为止，我们知道了，使用API的时候需要加上用户的token,然后token对应一个用户的用户身份，一个用户的用户身份又对应了：user -&gt; role -&gt; project的这样的关系。所以说对一个API有没有调用的权限，要看的还是用户的角色（role）。 那么，我们肯定需要有一个文件来记录对应的role能不能调用对应的API。这个文件就是每一个OpenStack项目里面的policy.json文件。
 
-当你的一个user 对一个project 有对应的role的时候，你就有对应的
 
-role的角色
-
-查询对应用户的身份信息：
-
-openstack user list
-
-openstack project list
-
-openstack role list
-
-每个项目项目下面的policy.json：
 
 控制了所有的role 对OpenStack的API的调用权限。
 
