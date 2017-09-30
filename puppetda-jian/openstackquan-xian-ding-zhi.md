@@ -63,5 +63,20 @@ nova --debug list
 "volume:delete": "rule:admin_or_owner",
 ```
 
-我们在每一个项目里面，我们经常会去自定义一个我们自己的一个用户角色，那我们怎么去定义这个用户有什么样的用户权限。
+我们在每一个项目里面，我们经常会去自定义一个我们自己的一个用户角色，那我们怎么去定义这个用户有什么样的用户权限呢？当然是修改policy.json文件咯。
+
+```
+# openstack user create zhao
+# openstack role create visitor
+# openstack role add --user zhao --project openstack visotor
+```
+
+之后修改policy.json文件。
+
+```
+# vim /etc/cinder/policy.json
+
+```
+
+
 
