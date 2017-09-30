@@ -58,17 +58,7 @@ nova --debug list
 "volume:create": "", 
 
 #表示只有符合admin_or_owner这个规则的，才能调这个API
-"volume:delete": "rule:admin_or_owner", 
-```
-
-"admin\_or\_owner":  "is\_admin:True or project\_id:%\(project\_id\)s", \# 表示的是这个用户是admin或者他提供的project\_id等于他所要操作的资源所在的project\_id
-
-添加某个role的对应的权限：
-
-```
-"memeber": "role:test",
-
-"volume:create": "rule:memeber or rule:admin\_or\_owner",
+"volume:delete": "rule:admin_or_owner",
 ```
 
 
