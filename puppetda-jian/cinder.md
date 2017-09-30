@@ -17,3 +17,7 @@ Cinder  Volume-type的原理
 
 Cinder Qos的设置原理
 
+Cinder创建存储卷的过程
+
+Cinder挂载存储卷的过程
+
