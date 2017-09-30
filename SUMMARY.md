@@ -36,9 +36,8 @@
     * [网络资源的定位](puppetda-jian/wang-luo-zi-yuan-de-ding-wei.md)
   * [Keystone](puppetda-jian/keystone.md)
     * [OpenStack权限定制](puppetda-jian/openstackquan-xian-ding-zhi.md)
-    * [Keystone的Token的使用](puppetda-jian/keystonede-token-de-shi-yong.md)
   * Nova
-    * 虚拟机的迁移
+    * [虚拟机的迁移](puppetda-jian/xu-ni-ji-de-qian-yi.md)
   * [Glance](puppetda-jian/glance.md)
     * [虚拟机镜像制作](puppetda-jian/xu-ni-ji-jing-xiang-zhi-zuo.md)
   * [Cinder](puppetda-jian/cinder.md)
