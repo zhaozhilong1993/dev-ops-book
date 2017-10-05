@@ -41,4 +41,5 @@
   * [Glance](puppetda-jian/glance.md)
     * [虚拟机镜像制作](puppetda-jian/xu-ni-ji-jing-xiang-zhi-zuo.md)
   * [Cinder](puppetda-jian/cinder.md)
+  * [Heat](puppetda-jian/heat.md)
 

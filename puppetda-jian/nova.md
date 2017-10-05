@@ -9,11 +9,23 @@ Nova的各个进程的作用
 
 Nova的工作流
 
+创建虚拟机
+
 ```
 nova-api -> nova-scheduler -> nova-compute <--> nova-container
 ```
 
+nova-api接收到API请求之后会把这个创建虚拟机的请求交给nova-scheduler去执行，最后nova-scheduler会给nova-compute发送一个rpc请求。在nova-compute接收到这个请求之后，会根据配置文件中指定的virt driver的值去调用底层的libvirtd的接口：
+
+```
+nova-compute -> virt driver -> libvirtd -> [管控虚拟机]
+```
+
+
+
 启动虚拟机
+
+
 
 冷迁移虚拟机
 
