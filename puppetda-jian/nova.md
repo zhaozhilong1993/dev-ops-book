@@ -1,4 +1,4 @@
-Nova
+# Nova
 
 Nova的各个进程的作用
 
@@ -7,9 +7,9 @@ Nova的各个进程的作用
 * nova-conductor: 提供与数据库的交互服务
 * nova-compute: 提供计算服务（计算节点上特有的）
 
-Nova的工作流
+## Nova的工作流
 
-创建虚拟机
+### 创建虚拟机
 
 ```
 nova-api -> nova-scheduler -> nova-compute <--> nova-conductor
@@ -23,11 +23,11 @@ nova-compute -> virt driver -> libvirtd -> [管控虚拟机]
 
 在这个过程中nova-compute会给nova-conductor发送rpc请求，去更新数据库里面的信息。
 
+### 冷迁移虚拟机
 
 
-启动虚拟机
 
-冷迁移虚拟机
+### 热迁移虚拟机
 
-热迁移虚拟机
+
 
