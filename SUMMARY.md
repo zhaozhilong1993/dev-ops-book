@@ -33,7 +33,6 @@
 * [OpenStack培训教材](puppetda-jian/openstackpei-xun-jiao-cai.md)
   * [OpenStack的安装与部署](puppetda-jian/openstackde-an-zhuang-yu-bu-shu.md)
   * [Neutron](puppetda-jian/neutron.md)
-    * [网络资源的定位](puppetda-jian/wang-luo-zi-yuan-de-ding-wei.md)
   * [Keystone](puppetda-jian/keystone.md)
   * [Nova](puppetda-jian/nova.md)
   * [Glance](puppetda-jian/glance.md)
