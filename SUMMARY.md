@@ -35,7 +35,6 @@
   * [Neutron](puppetda-jian/neutron.md)
     * [网络资源的定位](puppetda-jian/wang-luo-zi-yuan-de-ding-wei.md)
   * [Keystone](puppetda-jian/keystone.md)
-    * [OpenStack权限定制](puppetda-jian/openstackquan-xian-ding-zhi.md)
   * [Nova](puppetda-jian/nova.md)
   * [Glance](puppetda-jian/glance.md)
   * [Cinder](puppetda-jian/cinder.md)
