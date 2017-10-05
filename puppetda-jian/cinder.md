@@ -24,7 +24,18 @@ iscsi_ip_address=192.168.20.27
 volume_driver=cinder.volume.drivers.lvm.LVMVolumeDriver
 ```
 
-会有一个volume_type的标签，volume_
+会有一个volume_type的标签，volume\_type对应多个后段存储标签。我们用如下命令：_
+
+```
+# cinder type-create lvm
+# cinder type-list
+# cinder type-key lvm set volume_backend_name=LVM_iSCSI
+# cinder extra-specs-list 
+```
+
+我们在上面创建了一个名为“lvm”的存储类型，并且指定他的名字为“LVM\_iSCSI”。
+
+
 
 Cinder Qos的设置原理
 
