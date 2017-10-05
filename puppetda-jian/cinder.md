@@ -24,6 +24,8 @@ iscsi_ip_address=192.168.20.27
 volume_driver=cinder.volume.drivers.lvm.LVMVolumeDriver
 ```
 
+会有一个volume_type的标签，volume_
+
 Cinder Qos的设置原理
 
 Cinder创建存储卷的过程
