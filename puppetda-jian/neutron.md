@@ -3,8 +3,11 @@
 neutron的进程:
 
 * neutron-server: neutron的唯一一个任务进程,管理所有的API的响应和处理
-* 
-
+* neutron-dhcp-agent.service：复制做dhcp的namespace的分发
+* neutron-l3-agent.service：Neutron的L3层的代理
+* neutron-metadata-agent.service：
+* neutron-metering-agent.service    
+* neutron-openvswitch-agent.service
 
 网桥原理
 
