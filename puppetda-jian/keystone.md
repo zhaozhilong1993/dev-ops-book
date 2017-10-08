@@ -69,8 +69,9 @@ nova --debug list
 
 ```
 # openstack user create zhao
+# openstack project create ustack
 # openstack role create visitor
-# openstack role add --user zhao --project openstack visotor
+# openstack role add --user zhao --project ustack visitor
 ```
 
 之后修改policy.json文件。

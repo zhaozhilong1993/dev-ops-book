@@ -28,8 +28,18 @@ volume_driver=cinder.volume.drivers.lvm.LVMVolumeDriver
 
 ```
 # cinder type-create lvm
++--------------------------------------+------+-------------+-----------+
+| ID                                   | Name | Description | Is_Public |
++--------------------------------------+------+-------------+-----------+
+| 98f4fdea-ac88-4dbc-856c-c489cc4474a5 | lvm  | -           | True      |
++--------------------------------------+------+-------------+-----------+
+
 # cinder type-list
+
+
 # cinder type-key lvm set volume_backend_name=LVM_iSCSI
+
+
 # cinder extra-specs-list
 ```
 
