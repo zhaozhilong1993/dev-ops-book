@@ -27,15 +27,15 @@ volume_driver=cinder.volume.drivers.lvm.LVMVolumeDriver
 会有一个volume_type的标签，volume\_type对应多个后段存储标签。我们用如下命令：_
 
 ```
-# cinder type-create lvm
+# cinder type-create lvm-self
 +--------------------------------------+------+-------------+-----------+
 | ID                                   | Name | Description | Is_Public |
 +--------------------------------------+------+-------------+-----------+
-| 98f4fdea-ac88-4dbc-856c-c489cc4474a5 | lvm  | -           | True      |
+| 98f4fdea-ac88-4dbc-856c-c489cc4474a5 | lvm-self  | -           | True      |
 +--------------------------------------+------+-------------+-----------+
 
 # cinder type-list
-# cinder type-key lvm set volume_backend_name=LVM_iSCSI
+# cinder type-key lvm-self set volume_backend_name=LVM_iSCSI
 # cinder extra-specs-list
 ```
 
@@ -46,6 +46,7 @@ volume_driver=cinder.volume.drivers.lvm.LVMVolumeDriver
 ```
 # vim /etc/cinder/cinder.conf
 ...
+# 我原来的环境里面有另一个backends叫lvm，我们就加了一个叫LVM_iSCSI的backends
 enabled_backends = lvm,LVM_iSCSI
 ...
 [LVM_iSCSI]
