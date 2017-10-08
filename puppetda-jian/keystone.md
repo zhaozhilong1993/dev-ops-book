@@ -75,6 +75,12 @@ nova --debug list
 # openstack role add --user zhao --project ustack visitor
 ```
 
+接着我们为这个用户生成一个keystone的环境变量文件：
+
+```
+
+```
+
 之后修改policy.json文件。
 
 ```
