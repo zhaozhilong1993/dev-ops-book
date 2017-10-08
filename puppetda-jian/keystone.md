@@ -68,8 +68,8 @@ nova --debug list
 我们在每一个项目里面，我们经常会去自定义一个我们自己的一个用户角色，那我们怎么去定义这个用户有什么样的用户权限呢？当然是修改policy.json文件咯。
 
 ```
-# openstack user create zhao
-# openstack user set  --password ustack zhao
+# openstack user create ustack
+# openstack user set  --password openstack ustack
 # openstack project create ustack
 # openstack role create visitor
 # openstack role add --user zhao --project ustack visitor
@@ -78,7 +78,22 @@ nova --debug list
 接着我们为这个用户生成一个keystone的环境变量文件：
 
 ```
+# vim /root/keystonerc_ustack
+unset OS_SERVICE_TOKEN
+    export OS_USERNAME=ustack
+    export OS_PASSWORD=openstack
+    export OS_AUTH_URL=http://192.168.20.27:5000/v2.0
+    export PS1='[\u@\h \W(keystone_ustack)]\$ '
 
+export OS_TENANT_NAME=ustack
+export OS_REGION_NAME=RegionOne
+```
+
+后面尝试这个keystone\_ustack文件：
+
+```
+# source keystonerc_ustack
+# openstack token issue 
 ```
 
 之后修改policy.json文件。
