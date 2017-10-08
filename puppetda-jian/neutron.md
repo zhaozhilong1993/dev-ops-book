@@ -1,6 +1,10 @@
 # Neutron
 
-namespace
+neutron的进程:
+
+* neutron-server: neutron的唯一一个任务进程,管理所有的API的响应和处理
+* 
+
 
 网桥原理
 
