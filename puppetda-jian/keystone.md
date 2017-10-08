@@ -69,6 +69,7 @@ nova --debug list
 
 ```
 # openstack user create zhao
+# openstack user set  --password ustack zhao
 # openstack project create ustack
 # openstack role create visitor
 # openstack role add --user zhao --project ustack visitor
