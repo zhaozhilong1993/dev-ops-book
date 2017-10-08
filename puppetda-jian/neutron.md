@@ -9,6 +9,10 @@
 * neutron-metering-agent.service ：OpenStack的网络监控服务  
 * neutron-openvswitch-agent.service：OVS服务
 
+## neutron的基本命令
+
+
+
 ## 网络资源定位
 
 我们的【路由器／负载均衡器／dhcp服务器】都是以单独的一个namespace在在网络节点上的分布。所以我们只要知道【路由器／负载均衡器／dhcp服务器】这三个资源的UUID就可以找到对应的namespace。如：
