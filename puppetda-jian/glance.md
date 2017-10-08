@@ -22,7 +22,5 @@ API v1有glance-api\(default port 9292\)和glance-registry\(default port 9191\)�
 
 API v2实现上，将glance-registry的功能合并到了glance-api，减少了一个中间环节。
 
-注意Glance服务是最简单的OpenStack服务之一，不依赖RabbitMQ。
-
-
+注意Glance服务是最简单的OpenStack服务之一，不依赖RabbitMQ。![](/assets/import.png)
 
