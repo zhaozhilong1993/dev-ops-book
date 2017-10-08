@@ -41,6 +41,16 @@ volume_driver=cinder.volume.drivers.lvm.LVMVolumeDriver
 
 我们在上面创建了一个名为“lvm”的存储类型，并且指定他的名字为“LVM\_iSCSI”。
 
+想要让这个存储类型生效，我们还需要在配置文件里面指定这个存储类型的一些信息：
+
+```
+
+```
+
+
+
+
+
 Cinder Qos的设置原理
 
 Cinder 的Qos是在OpenStack 的H版中加入进来的，主要是用于限制磁盘IO。cinder的Qos只能是针对一个volume-type而言的，而不是针对某一个磁盘，所以在我们定义好的Qos的规则需要和volume-type关联。
