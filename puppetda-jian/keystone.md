@@ -134,13 +134,80 @@ export OS_REGION_NAME=RegionOne
 +------------------------------+--------------------------------------+
 ```
 
-我们会发现
-
-之后修改policy.json文件。
+我们会发现这个用户可以直接使用volume-create的接口。那我们要怎么限制这个接口只能让admin用户使用呢？
+我们现在修改policy.json文件。
 
 ```
 # vim /etc/cinder/policy.json
+{
+...
+    "admin_api": "is_admin:True",
+
+    "volume:create": "rule:admin_api",
+...
+}
 ```
-
-
-
+这样就可以限制这个API只有admin用户能使用了。我们来试验一下：
+```
+[root@packstack-1 cinder(keystone_ustack)]# cinder create 1 --name volume2
+ERROR: Policy doesn't allow volume:create to be performed. (HTTP 403) (Request-ID: req-134f2ab0-9d21-4e61-90a3-8ff4cd9855b7)
+[root@packstack-1 cinder(keystone_ustack)]#
+[root@packstack-1 cinder(keystone_ustack)]#
+[root@packstack-1 cinder(keystone_ustack)]#
+[root@packstack-1 cinder(keystone_ustack)]# source /root/keystonerc_admin
+[root@packstack-1 cinder(keystone_admin)]# cinder create 1 --name volume2
++--------------------------------+--------------------------------------+
+| Property                       | Value                                |
++--------------------------------+--------------------------------------+
+| attachments                    | []                                   |
+| availability_zone              | nova                                 |
+| bootable                       | false                                |
+| consistencygroup_id            | None                                 |
+| created_at                     | 2017-10-08T04:41:37.000000           |
+| description                    | None                                 |
+| encrypted                      | False                                |
+| id                             | 9e231dbb-107b-4ade-869a-4b9ba4be21bf |
+| metadata                       | {}                                   |
+| migration_status               | None                                 |
+| multiattach                    | False                                |
+| name                           | volume2                              |
+| os-vol-host-attr:host          | None                                 |
+| os-vol-mig-status-attr:migstat | None                                 |
+| os-vol-mig-status-attr:name_id | None                                 |
+| os-vol-tenant-attr:tenant_id   | af92958c9f69464abeb689e6eb1263a1     |
+| replication_status             | disabled                             |
+| size                           | 1                                    |
+| snapshot_id                    | None                                 |
+| source_volid                   | None                                 |
+| status                         | creating                             |
+| updated_at                     | None                                 |
+| user_id                        | 02a7a90ca9ca4c91b396a60387dceaa7     |
+| volume_type                    | iscsi                                |
++--------------------------------+--------------------------------------+
+```
+我们发现成功了。
+有些时候，我们还希望，某个API只给某个用户使用。我们可以这么写：
+```
+# vim /etc/cinder/policy.json
+{
+...
+    "visitor": "role:visitor",
+    "volume:create": "rule:visitor",
+...
+}
+```
+这个规则限制了，只有visitor的role才能使用这个API,连admin都是不能调的：
+```
+[root@packstack-1 ~(keystone_admin)]# cinder create 1 --name volume1
+ERROR: Policy doesn't allow volume:create to be performed. (HTTP 403) (Request-ID: req-dfbabd39-d4ee-40e3-842d-5b6136928ef0)
+```
+如果要给多个用户使用：
+```
+# vim /etc/cinder/policy.json
+{
+...
+    "visitor": "role:visitor or role:admin",
+    "volume:create": "rule:visitor",
+...
+}
+```
