@@ -134,7 +134,7 @@ export OS_REGION_NAME=RegionOne
 +------------------------------+--------------------------------------+
 ```
 
-我们会发现这个用户可以直接使用volume-create的接口。那我们要怎么限制这个接口只能让admin用户使用呢？
+我们会发现这个用户可以直接使用volume-create的接口。那我们要怎么限制这个接口只能让admin用户使用呢？  
 我们现在修改policy.json文件。
 
 ```
@@ -147,7 +147,9 @@ export OS_REGION_NAME=RegionOne
 ...
 }
 ```
+
 这样就可以限制这个API只有admin用户能使用了。我们来试验一下：
+
 ```
 [root@packstack-1 cinder(keystone_ustack)]# cinder create 1 --name volume2
 ERROR: Policy doesn't allow volume:create to be performed. (HTTP 403) (Request-ID: req-134f2ab0-9d21-4e61-90a3-8ff4cd9855b7)
@@ -185,8 +187,10 @@ ERROR: Policy doesn't allow volume:create to be performed. (HTTP 403) (Request-I
 | volume_type                    | iscsi                                |
 +--------------------------------+--------------------------------------+
 ```
-我们发现成功了。
+
+我们发现成功了。  
 有些时候，我们还希望，某个API只给某个用户使用。我们可以这么写：
+
 ```
 # vim /etc/cinder/policy.json
 {
@@ -196,12 +200,16 @@ ERROR: Policy doesn't allow volume:create to be performed. (HTTP 403) (Request-I
 ...
 }
 ```
+
 这个规则限制了，只有visitor的role才能使用这个API,连admin都是不能调的：
+
 ```
 [root@packstack-1 ~(keystone_admin)]# cinder create 1 --name volume1
 ERROR: Policy doesn't allow volume:create to be performed. (HTTP 403) (Request-ID: req-dfbabd39-d4ee-40e3-842d-5b6136928ef0)
 ```
+
 如果要给多个用户使用：
+
 ```
 # vim /etc/cinder/policy.json
 {
@@ -211,3 +219,6 @@ ERROR: Policy doesn't allow volume:create to be performed. (HTTP 403) (Request-I
 ...
 }
 ```
+
+
+
