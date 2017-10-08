@@ -32,8 +32,6 @@ qrouter-24ab8049-7e70-45ed-9d0b-1bacc4789a53
 
 你就能找到对应的namespace。
 
-## 怎么定位一个端口在哪个网络节点上
-
 ## Neutron metadata
 
 Neutron metadata 代理程序的作用是让运行在租户网络上的虚拟机实例能够访问 OpenStack 计算服务 API 元数据。流程图如下
