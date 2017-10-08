@@ -72,7 +72,7 @@ nova --debug list
 # openstack user set  --password openstack ustack
 # openstack project create ustack
 # openstack role create visitor
-# openstack role add --user zhao --project ustack visitor
+# openstack role add --user ustack --project ustack visitor
 ```
 
 接着我们为这个用户生成一个keystone的环境变量文件：
@@ -93,7 +93,15 @@ export OS_REGION_NAME=RegionOne
 
 ```
 # source keystonerc_ustack
-# openstack token issue 
+# openstack token issue
++------------+----------------------------------+
+| Field      | Value                            |
++------------+----------------------------------+
+| expires    | 2017-10-08 05:31:19+00:00        |
+| id         | b801f63b5a0e44f4b3d2b06fa367eb13 |
+| project_id | 0994660fae9d4f7d8debe826666afc70 |
+| user_id    | 8dd2237de85e4922aa5e720fb0d42cac |
++------------+----------------------------------+
 ```
 
 之后修改policy.json文件。
