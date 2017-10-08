@@ -11,8 +11,6 @@
 
 ## 网桥原理
 
-
-
 路由器／负载均衡器／dhcp服务器在网络节点上的分布
 
 怎么定位一个端口在哪个网络节点上
@@ -30,13 +28,9 @@ Neutron metadata 代理程序的作用是让运行在租户网络上的虚拟机
 3. 该路由器中开启了metadata-proxy代理，该服务通过unix socket链接到网络节点宿主机的metadata-agent服务（通过netstat -lxp\|grep metadata\_proxy）找到agent的进程；
 4. 该metadata agent和nova通信完成虚拟机元数据的获取
 
-
-
-东西向网络走向
+## 网络走向
 
 ![](/assets/neutron-net1.png)
-
-南北向网络走向
 
 ![](/assets/neutron-net2.png)
 
