@@ -9,7 +9,7 @@ cinder主要有4个进程组成：
 
 cinder其实只是一个抽象层，它本身并不是一种存储技术，它为其他真正的存储技术，如：SAN，Ceph，NAS等等，提供了统一化的接口。其实也是由cinder-volume这个进程来完成的。其他不同厂商要一 般都是以在cinder里面提供driver的形式来提供对应的支持的。所有具体的driver的提供形式都在driver这个目录下面。
 
-Cinder  Volume-type
+## Cinder  Volume-type
 
 我们看到当前的cinder的配置文件。
 
@@ -57,7 +57,7 @@ volumes_dir=/var/lib/cinder/volumes
 volume_backend_name=LVM_iSCSI
 ```
 
-Cinder Qos的设置原理
+## Cinder Qos的设置原理
 
 Cinder 的Qos是在OpenStack 的H版中加入进来的，主要是用于限制磁盘IO。cinder的Qos只能是针对一个volume-type而言的，而不是针对某一个磁盘，所以在我们定义好的Qos的规则需要和volume-type关联。
 
