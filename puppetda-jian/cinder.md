@@ -35,11 +35,7 @@ volume_driver=cinder.volume.drivers.lvm.LVMVolumeDriver
 +--------------------------------------+------+-------------+-----------+
 
 # cinder type-list
-
-
 # cinder type-key lvm set volume_backend_name=LVM_iSCSI
-
-
 # cinder extra-specs-list
 ```
 
