@@ -57,6 +57,13 @@ volumes_dir=/var/lib/cinder/volumes
 volume_backend_name=LVM_iSCSI
 ```
 
+之后重启cinder的服务，并创建一个这个volume-type的存储卷：
+
+```
+# systemctl restart openstack-cinder*
+# cinder create 1 --volume-type=lvm-self --name volume3
+```
+
 ## Cinder Qos的设置原理
 
 Cinder 的Qos是在OpenStack 的H版中加入进来的，主要是用于限制磁盘IO。cinder的Qos只能是针对一个volume-type而言的，而不是针对某一个磁盘，所以在我们定义好的Qos的规则需要和volume-type关联。
