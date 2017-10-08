@@ -32,6 +32,10 @@ qrouter-24ab8049-7e70-45ed-9d0b-1bacc4789a53
 
 你就能找到对应的namespace。
 
+## 主机端口
+
+我们的每一个虚拟主机的网卡又怎么看呢？我们知道在neutron里面网卡对应的资源是neutron的port。一个port的UUID的前11位分别对应了下面的qvb和qvo设备。都是绑定在ovs桥上面的。
+
 ## Neutron metadata
 
 Neutron metadata 代理程序的作用是让运行在租户网络上的虚拟机实例能够访问 OpenStack 计算服务 API 元数据。流程图如下
