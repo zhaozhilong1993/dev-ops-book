@@ -44,12 +44,16 @@ volume_driver=cinder.volume.drivers.lvm.LVMVolumeDriver
 想要让这个存储类型生效，我们还需要在配置文件里面指定这个存储类型的一些信息：
 
 ```
+# vim /etc/cinder/cinder.conf
+enabled_backends = lvm,LVM_iSCSI
 
+[LVM_iSCSI]
+iscsi_helper=lioadm
+iscsi_ip_address=192.168.20.27
+volume_driver=cinder.volume.drivers.lvm.LVMVolumeDriver
+volumes_dir=/var/lib/cinder/volumes
+volume_backend_name=LVM_iSCSI
 ```
-
-
-
-
 
 Cinder Qos的设置原理
 
