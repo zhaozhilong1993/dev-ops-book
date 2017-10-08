@@ -45,8 +45,9 @@ volume_driver=cinder.volume.drivers.lvm.LVMVolumeDriver
 
 ```
 # vim /etc/cinder/cinder.conf
+...
 enabled_backends = lvm,LVM_iSCSI
-
+...
 [LVM_iSCSI]
 iscsi_helper=lioadm
 iscsi_ip_address=192.168.20.27
