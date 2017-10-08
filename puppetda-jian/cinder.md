@@ -62,6 +62,7 @@ volume_backend_name=LVM_iSCSI
 ```
 # systemctl restart openstack-cinder*
 # cinder create 1 --volume-type=lvm-self --name volume3
+# cinder list
 ```
 
 ## Cinder Qos的设置原理
