@@ -107,7 +107,31 @@ export OS_REGION_NAME=RegionOne
 我们接下来用这个用户创建一个磁盘：
 
 ```
-
+# cinder create 1 --name volume
++------------------------------+--------------------------------------+
+| Property                     | Value                                |
++------------------------------+--------------------------------------+
+| attachments                  | []                                   |
+| availability_zone            | nova                                 |
+| bootable                     | false                                |
+| consistencygroup_id          | None                                 |
+| created_at                   | 2017-10-08T04:32:25.000000           |
+| description                  | None                                 |
+| encrypted                    | False                                |
+| id                           | 93d6ab49-3683-4980-999b-fbbd7d65f23c |
+| metadata                     | {}                                   |
+| multiattach                  | False                                |
+| name                         | volume                               |
+| os-vol-tenant-attr:tenant_id | 0994660fae9d4f7d8debe826666afc70     |
+| replication_status           | disabled                             |
+| size                         | 1                                    |
+| snapshot_id                  | None                                 |
+| source_volid                 | None                                 |
+| status                       | creating                             |
+| updated_at                   | None                                 |
+| user_id                      | 8dd2237de85e4922aa5e720fb0d42cac     |
+| volume_type                  | iscsi                                |
++------------------------------+--------------------------------------+
 ```
 
 之后修改policy.json文件。
