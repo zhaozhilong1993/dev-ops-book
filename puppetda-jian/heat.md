@@ -33,47 +33,22 @@ resources:
           for_each:
              open_port: { get_param: ports }
              protocol_type: { get_param: protocols }
-             
+
 # heat stack-create -f start_vm.yaml my_first_stack
 ```
 
 # 简单的Hot模板使用分析 {#HOT之HelloWorld-最简单的Hot模板}
 
 ```
-heat_template_version: 2013-05-23
-
-description: >
-  Hello world HOT template that just defines a single server.
-  Contains just base features to verify base HOT support.
-parameters:
-  flavor:
-    type: string
-    description: Flavor for the server to be created
-    default: m1.tiny
-    constraints:
-      - custom_constraint: nova.flavor
-  image:
-    type: string
-    default: cirros
-    description: Image ID or image name to use for the server
-    constraints:
-  network:
-    type: string
-    default:  private
-    description: Image ID or image name to use for the server
+heat_template_version: 2015-04-30
 
 resources:
   server:
     type: OS::Nova::Server
     properties:
-      image: { get_param: image }
-      flavor: { get_param: flavor }
-      networks: [{network: {get_param: network} }]
-
-outputs:
-  server_networks:
-    description: The networks of the deployed server
-    value: { get_attr: [server, networks] }
+      image: cirros
+      flavor: m1.tiny
+      networks: [{network: private }]
 ```
 
 # 最简单的Hot模板解析 {#HOT之HelloWorld-最简单的Hot模板解析}
