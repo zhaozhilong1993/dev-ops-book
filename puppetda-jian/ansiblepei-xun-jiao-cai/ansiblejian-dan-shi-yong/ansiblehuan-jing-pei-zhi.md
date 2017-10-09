@@ -32,6 +32,15 @@
 # mkdir -p /etc/ansible/roles/nic/tasks/
 ```
 
+之后创建一个main.yaml文件，做请求的分发：
+
+```
+- include: collect.yaml
+  when: method == "collect"
+```
+
+
+
 实际生产中，我们有时候会想要单独给这\[ustack\]标签中的主机分别传送一些值，这个要怎么做呢？  
 这就用到了host\_vars和role\_vars目录。  
 我们先把这两个目录建立出来。
