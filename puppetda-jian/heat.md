@@ -131,7 +131,5 @@ resources:
 
 这样一看我们的模板的复用性大大的增强了.
 
-## Hot输出信息定义-outputs {#HOT之HelloWorld-在parameter输入中设定校验}
 
-有时候我们希望在运行完我们的Hot之后给用户一些outputs，这时候我们就可以使用Hot里面的outputs选项。
 
