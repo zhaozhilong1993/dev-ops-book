@@ -95,15 +95,43 @@ resources选项是必须填的，而且必须包含1个预定义的资源，上�
 
 ## 使用parameters来修改HelloWorld模板 {#HOT之HelloWorld-使用parameters来修改HelloWorld模板}
 
-现在我们使用parameters来重新定义上面的模板
+现在我们使用parameters来重新定义上面的模板:
 
-这样一看我们的模板的复用性大大的增强了，如果你想设定默认值，你也可以这样做：
+```
+heat_template_version: 2013-05-23
 
-## 在parameter输入中设定校验 {#HOT之HelloWorld-在parameter输入中设定校验}
+description: >
+  Hello world HOT template that just defines a single server.
+  Contains just base features to verify base HOT support.
+parameters:
+  flavor:
+    type: string
+    description: Flavor for the server to be created
+    default: m1.tiny
+    constraints:
+      - custom_constraint: nova.flavor
+  image:
+    type: string
+    default: cirros
+    description: Image ID or image name to use for the server
+    constraints:
+  network:
+    type: string
+    default:  private
+    description: Image ID or image name to use for the server
 
-有时候我们想要规定输入参数，以防止错误的输入导致的一些不必要的结果，这时候我们就可以在输入的参数中做出定义：
+resources:
+  server:
+    type: OS::Nova::Server
+    properties:
+      image: { get_param: image }
+      flavor: { get_param: flavor }
+      networks: [{network: {get_param: network} }]
+```
 
-# Hot输出信息定义-outputs {#HOT之HelloWorld-Hot输出信息定义-outputs}
+这样一看我们的模板的复用性大大的增强了.
+
+## Hot输出信息定义-outputs {#HOT之HelloWorld-在parameter输入中设定校验}
 
 有时候我们希望在运行完我们的Hot之后给用户一些outputs，这时候我们就可以使用Hot里面的outputs选项。
 
