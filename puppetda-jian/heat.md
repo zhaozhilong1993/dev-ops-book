@@ -6,11 +6,38 @@ heat的初体验：
 
 ```
 # vim start_vm.yaml
-
+heat_template_version: 2015-10-15
+description: An example for use repeat to create resource
+             Notice:repeat is available after the version of 2015-10-15
+parameters:
+  ports:
+    type: comma_delimited_list
+    label: ports
+    default: "80,443,8080,22"
+  protocols:
+    type: comma_delimited_list
+    label: protocols
+    default: "tcp,udp"
+resources:
+  security_group:
+    type: OS::Neutron::SecurityGroup
+    properties:
+      name: web_server_security_group
+      description: a SecurityGroup create by repeat
+      rules:
+        repeat:
+          template:
+             protocol: protocol_type
+             port_range_min: open_port
+             port_range_max: open_port
+          for_each:
+             open_port: { get_param: ports }
+             protocol_type: { get_param: protocols }
+             
 # heat stack-create -f start_vm.yaml my_first_stack
 ```
 
-# 简单的Hot模板 {#HOT之HelloWorld-最简单的Hot模板}
+# 简单的Hot模板使用分析 {#HOT之HelloWorld-最简单的Hot模板}
 
 ```
 heat_template_version: 2013-05-23
