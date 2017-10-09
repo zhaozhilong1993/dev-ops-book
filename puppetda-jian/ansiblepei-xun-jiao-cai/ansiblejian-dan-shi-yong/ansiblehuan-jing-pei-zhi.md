@@ -36,11 +36,7 @@
     - { role: nic,method: collect }
 ```
 
-
-
-
-
-我们现在先来创建一个role任务：
+接下来，我们创建一个对应的role任务：
 
 ```
 # mkdir -p /etc/ansible/roles/nic/tasks/
