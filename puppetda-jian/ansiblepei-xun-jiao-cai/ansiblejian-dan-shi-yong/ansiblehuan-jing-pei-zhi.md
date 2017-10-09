@@ -35,11 +35,18 @@
 之后创建一个main.yaml文件，做请求的分发：
 
 ```
+# vim /etc/ansible/roles/nic/tasks/main.yaml
 - include: collect.yaml
   when: method == "collect"
 ```
 
+之后创建一个collect.yaml文件，去实现这个具体逻辑：
 
+```
+# vim /etc/ansible/roles/nic/tasks/collect.yaml
+- name: run this command and ignore the result
+  shell: /usr/bin/echo "nic_num" > /mnt/world
+```
 
 实际生产中，我们有时候会想要单独给这\[ustack\]标签中的主机分别传送一些值，这个要怎么做呢？  
 这就用到了host\_vars和role\_vars目录。  
