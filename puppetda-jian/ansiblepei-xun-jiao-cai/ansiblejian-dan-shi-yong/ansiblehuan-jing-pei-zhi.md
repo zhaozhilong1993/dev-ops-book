@@ -29,7 +29,7 @@
 我们现在先来创建一个role任务：
 
 ```
-# mkdir /etc/ansible/roles/nic/tasks
+# mkdir -p /etc/ansible/roles/nic/tasks/
 ```
 
 实际生产中，我们有时候会想要单独给这\[ustack\]标签中的主机分别传送一些值，这个要怎么做呢？  
