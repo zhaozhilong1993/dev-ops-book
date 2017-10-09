@@ -87,7 +87,21 @@ fa:16:3e:e2:21:5b
 ```
 # vim /etc/ansible/hosts_var/127.0.0.1
 nic_mac: fa:16:3e:e2:21:5b
+
+# vim /etc/ansible/hosts_var/192.168.20.25
+nic_mac: fa:16:3e:09:7c:af
+
+# vim /etc/ansible/hosts_var/192.168.20.26
+nic_mac: fa:16:3e:0e:04:a0
 ```
 
+之后修改我们的role文件：
 
+```
+# vim /etc/ansible/roles/nic/tasks/collect.yaml
+- name: run this command and ignore the result
+  shell: /usr/bin/echo {{ nic_mac }} > /opt/nic
+```
+
+这样我们能看到
 
