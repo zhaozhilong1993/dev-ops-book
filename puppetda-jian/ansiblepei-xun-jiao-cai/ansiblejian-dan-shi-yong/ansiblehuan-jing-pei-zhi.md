@@ -82,5 +82,12 @@ fa:16:3e:e2:21:5b
 # mkdir /etc/ansible/group_vars
 ```
 
+之后在hosts\_var下面建立对应的IP的文件，如：
+
+```
+# vim /etc/ansible/hosts_var/127.0.0.1
+nic_mac: fa:16:3e:e2:21:5b
+```
+
 
 
