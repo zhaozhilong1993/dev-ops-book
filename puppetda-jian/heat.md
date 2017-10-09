@@ -98,7 +98,7 @@ resources选项是必须填的，而且必须包含1个预定义的资源，上�
 现在我们使用parameters来重新定义上面的模板:
 
 ```
-heat_template_version: 2013-05-23
+heat_template_version: 2015-04-30
 
 description: >
   Hello world HOT template that just defines a single server.
