@@ -46,7 +46,7 @@ description: >
   Contains just base features to verify base HOT support.
 
 resources:
-  server:
+  my_instance:
     type: OS::Nova::Server
     properties:
       image: cirros
