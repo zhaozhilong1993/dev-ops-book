@@ -20,19 +20,15 @@
 
 所以说针对上面的目录结构，我们可以做个拓展，针对大规模集群的角色定义：
 
-\[webserver\]
-
+```
+[webserver]
 10.0.0.1
-
-\[databaserver\]
-
+[databaserver]
 10.0.0.2
-
-\[region\_name:children\]
-
+[region_name:children]
 webserver
-
 databaserver
+```
 
 这样一个集群就是一个group，你只要在group\_vars下面定义一个名为region\_name的文件：
 
