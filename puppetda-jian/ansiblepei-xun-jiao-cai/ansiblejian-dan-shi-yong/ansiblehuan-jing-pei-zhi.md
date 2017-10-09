@@ -45,10 +45,10 @@
 ```
 # vim /etc/ansible/roles/nic/tasks/collect.yaml
 - name: run this command and ignore the result
-  shell: /usr/bin/echo "fa:16:3e:e2:21:5b" > /mnt/world
+  shell: /usr/bin/echo "fa:16:3e:e2:21:5b" > /opt/nic
 ```
 
- 我们就先尝试
+我们就先尝试把本机的mac地址输送到/opt/nic文件中去。
 
 实际生产中，我们有时候会想要单独给这\[ustack\]标签中的主机分别传送一些值，这个要怎么做呢？  
 这就用到了host\_vars和role\_vars目录。  
