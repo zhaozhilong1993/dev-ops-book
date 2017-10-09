@@ -103,5 +103,5 @@ nic_mac: fa:16:3e:0e:04:a0
   shell: /usr/bin/echo {{ nic_mac }} > /opt/nic
 ```
 
-这样我们能看到
+这样我们能看到每个IP上生成的文件都是我们之前在hosts\_var下面定义好的值。
 
