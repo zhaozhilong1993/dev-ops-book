@@ -26,6 +26,20 @@
 192.168.20.2[5:6]
 ```
 
+我们可以启动一个，简单的脚本，就是输出一个字符串到指定的文件。首先我们需要定义主文件：
+
+```
+# vim /etc/ansible/main.yaml
+- hosts: ustack
+  gather_facts: no
+  roles:
+    - { role: nic,method: collect }
+```
+
+
+
+
+
 我们现在先来创建一个role任务：
 
 ```
@@ -55,10 +69,6 @@
 ```
 # ansible-playbook -vvv -i hosts main.yaml
 ```
-
-
-
-
 
 实际生产中，我们有时候会想要单独给这\[ustack\]标签中的主机分别传送一些值，这个要怎么做呢？  
 这就用到了host\_vars和role\_vars目录。  
