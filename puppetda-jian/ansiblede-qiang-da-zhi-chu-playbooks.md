@@ -1,4 +1,4 @@
-# Ansible的强大之处Playbooks
+# Ansible Playbooks
 
 ## Playbooks 简介
 
@@ -43,7 +43,6 @@ playbook 由一个或多个 ‘plays’ 组成.它的内容是一个以 ‘plays
   handlers:
     - name: restart apache
       service: name=httpd state=restarted
-
 ```
 
 在下面,我们将分别讲解 playbook 语言的多个特性.
