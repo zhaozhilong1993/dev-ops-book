@@ -10,7 +10,7 @@ heat的初体验：
 # heat stack-create -f start_vm.yaml my_first_stack
 ```
 
-# 最简单的Hot模板 {#HOT之HelloWorld-最简单的Hot模板}
+# 简单的Hot模板 {#HOT之HelloWorld-最简单的Hot模板}
 
 ```
 heat_template_version: 2013-05-23
