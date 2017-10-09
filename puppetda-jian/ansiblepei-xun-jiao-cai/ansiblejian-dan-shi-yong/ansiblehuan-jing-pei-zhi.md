@@ -31,7 +31,8 @@
 我们先把这两个目录建立出来。
 
 ```
-
+# mkdir /etc/ansible/hosts_var
+# mkdir /etc/ansible/group_vars
 ```
 
 
