@@ -41,6 +41,9 @@ resources:
 
 ```
 heat_template_version: 2015-04-30
+description: >
+  Hello world HOT template that just defines a single server.
+  Contains just base features to verify base HOT support.
 
 resources:
   server:
