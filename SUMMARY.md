@@ -41,4 +41,6 @@
   * [Aodh](puppetda-jian/aodh.md)
   * [Ceilometer](puppetda-jian/ceilometer.md)
   * [Gnocchi](puppetda-jian/gnocchi.md)
+  * Rally
+  * Tempest
 
