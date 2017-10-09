@@ -12,9 +12,42 @@ heat的初体验：
 
 # 最简单的Hot模板 {#HOT之HelloWorld-最简单的Hot模板}
 
-| `heat_template_version:2015-04-30description: Simple template to deploy a single compute instanceresources:my_instance:type: OS::Nova::Serverproperties:key_name: my_keyimage: F18-x86_64-cfntoolsflavor: m1.small` |
-| :--- |
+```
+heat_template_version: 2013-05-23
 
+description: >
+  Hello world HOT template that just defines a single server.
+  Contains just base features to verify base HOT support.
+parameters:
+  flavor:
+    type: string
+    description: Flavor for the server to be created
+    default: m1.tiny
+    constraints:
+      - custom_constraint: nova.flavor
+  image:
+    type: string
+    default: cirros
+    description: Image ID or image name to use for the server
+    constraints:
+  network:
+    type: string
+    default:  private
+    description: Image ID or image name to use for the server
+
+resources:
+  server:
+    type: OS::Nova::Server
+    properties:
+      image: { get_param: image }
+      flavor: { get_param: flavor }
+      networks: [{network: {get_param: network} }]
+
+outputs:
+  server_networks:
+    description: The networks of the deployed server
+    value: { get_attr: [server, networks] }
+```
 
 # 最简单的Hot模板解析 {#HOT之HelloWorld-最简单的Hot模板解析}
 
@@ -26,9 +59,11 @@ heat的初体验：
 
 对你模板的描述，这个选项是可选的，但是多写description是一个很好的习惯，这有助于其他读者阅读你的Hot模板，如果你的描述特别长，一行装不下啦，你可以这样写:
 
-| `description: >This is how you can provide a longer descriptionof your template that goes over several lines.` |
-| :--- |
-
+```
+description: >
+  Hello world HOT template that just defines a single server.
+  Contains just base features to verify base HOT support.
+```
 
 ## resources: {#HOT之HelloWorld-resources:}
 
@@ -37,63 +72,33 @@ resources选项是必须填的，而且必须包含1个预定义的资源，上�
 * ### my\_instance {#HOT之HelloWorld-my_instance}
 
   这个是你的主机名，这个关键字也是必须的
+
 * ### type {#HOT之HelloWorld-type}
 
-  你需要引用的Heat的管理插件的类型，上面使用的是
+  你需要引用的Heat的管理插件的类型，上面使用的是  
   OS::Nova::Server
- 
-  所有的type列表可以在
-  [_Heat type list_](http://docs.openstack.org/developer/heat/template_guide/openstack.html)
-  中查看
+
+  所有的type列表可以在[_Heat type list_](http://docs.openstack.org/developer/heat/template_guide/openstack.html)中查看
+
 * ### properties {#HOT之HelloWorld-properties}
 
   每一个properties都对应一个type，每一个type的properties都是不一样的
-
-
 
 # Hot的参数输入入口-parameters {#HOT之HelloWorld-Hot的参数输入入口-parameters}
 
 输入参数可以定义在parameters中，在parameters中，用户可以输入诸如image\_id，flavor\_id，public\_network\_id等等不是固定的值，parameters可以让你的Hot模板更加容易复用。
 
-
-
 ## 使用parameters来修改HelloWorld模板 {#HOT之HelloWorld-使用parameters来修改HelloWorld模板}
 
 现在我们使用parameters来重新定义上面的模板
 
-| `heat_template_version:2015-04-30description: Simple template to deploy a single compute instanceparameters:key_name:type: stringlabel: Key Namedescription: Name of key-pair to be usedforcompute instanceimage_id:type: stringlabel: Image IDdescription: Image to be usedforcompute instanceinstance_type:type: stringlabel: Instance Typedescription: Type of instance (flavor) to be usedresources:my_instance:type: OS::Nova::Serverproperties:key_name: { get_param: key_name }image: { get_param: image_id }flavor: { get_param: instance_type }` |
-| :--- |
-
-
-
-
 这样一看我们的模板的复用性大大的增强了，如果你想设定默认值，你也可以这样做：
-
-| `parameters:instance_type:type: stringlabel: Instance Typedescription: Type of instance (flavor) to be useddefault: m1.small` |
-| :--- |
-
-
-
 
 ## 在parameter输入中设定校验 {#HOT之HelloWorld-在parameter输入中设定校验}
 
 有时候我们想要规定输入参数，以防止错误的输入导致的一些不必要的结果，这时候我们就可以在输入的参数中做出定义：
 
-| `parameters:database_password:type: stringlabel: Database Passworddescription: Password to be usedfordatabasehidden:trueconstraints:- length: { min:6, max:8}description: Password length must be between6and8characters.- allowed_pattern:"[a-zA-Z0-9]+"description: Password must consist of characters and numbers only.- allowed_pattern:"[A-Z]+[a-zA-Z0-9]*"description: Password must start with an uppercase character.` |
-| :--- |
-
-
-
-
 # Hot输出信息定义-outputs {#HOT之HelloWorld-Hot输出信息定义-outputs}
 
-有时候我们希望在运行完我们的Hot之后给用户一些outputs，这时候我们就可以使用Hot里面的outputs选项，下面的outputs就是获取上面运行起来的虚拟机的IP地址.
-
-
-
-| `outputs:instance_ip:description: The IP address of the deployed instancevalue: { get_attr: [my_instance, first_address] }` |
-| :--- |
-
-
-
+有时候我们希望在运行完我们的Hot之后给用户一些outputs，这时候我们就可以使用Hot里面的outputs选项。
 
