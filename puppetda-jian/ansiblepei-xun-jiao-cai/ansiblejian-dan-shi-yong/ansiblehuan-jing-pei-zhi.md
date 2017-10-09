@@ -66,6 +66,13 @@
 # ansible-playbook -vvv -i hosts main.yaml
 ```
 
+最后会发现/opt下面就有对应的文件出现：
+
+```
+# cat /opt/nic
+fa:16:3e:e2:21:5b
+```
+
 实际生产中，我们有时候会想要单独给这\[ustack\]标签中的主机分别传送一些值，这个要怎么做呢？  
 这就用到了host\_vars和role\_vars目录。  
 我们先把这两个目录建立出来。
