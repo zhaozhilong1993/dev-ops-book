@@ -26,7 +26,22 @@
 
 我们有时候也会声明一个变量，我们也可以对一个变量进行循环.
 
-
+```
+# vim /etc/ansible/group_vars/ustack
+domain: ustack.com
+users:
+  alice:
+      name: Alice Appleworth
+      telephone: 123-456-7890
+  bob:
+    name: Bob Bananarama
+    telephone: 987-654-3210
+    
+tasks:
+  - name: Print phone records
+    debug: msg="User {{ item.key }} is {{ item.value.name }} ({{ item.value.telephone }})"
+    with_dict: "{{users}}"
+```
 
 ## 注册变量
 
