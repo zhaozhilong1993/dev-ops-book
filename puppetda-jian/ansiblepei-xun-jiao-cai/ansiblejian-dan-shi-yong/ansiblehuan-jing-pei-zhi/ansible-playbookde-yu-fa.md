@@ -84,5 +84,9 @@ hostname要换成你主机标签的名字。
 
 ## 模版控制
 
+```
+template: src=foo.cfg.j2 dest={{ remote_install_path }}/foo.cfg
+```
+
 
 
