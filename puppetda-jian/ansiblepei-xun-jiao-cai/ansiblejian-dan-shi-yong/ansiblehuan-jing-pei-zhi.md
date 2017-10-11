@@ -31,7 +31,6 @@
 ```
 # vim /etc/ansible/main.yaml
 - hosts: ustack
-  gather_facts: no
   roles:
     - { role: nic,method: collect }
 ```
@@ -139,4 +138,14 @@ nic_mac: fa:16:3e:0e:04:a0
 ```
 
 这样我们能看到每个IP上生成的文件都是我们之前在hosts\_var下面定义好的值。
+
+### ansible-galaxy {#ansible-galaxy}
+
+正常情况下，我们一般不会手动去建立我们的role文件,一般都是用galaxy模块去建立：
+
+```
+
+```
+
+
 
