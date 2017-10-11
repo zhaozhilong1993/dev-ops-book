@@ -81,7 +81,12 @@ hostname要换成你主机标签的名字。
 
 ```
 # vim /etc/ansible/facts.d/test.fact
+[testdir]
+test_mem_size=1024
+test_cpu=8
 ```
+
+这样
 
 ## 模版控制
 
