@@ -68,7 +68,13 @@ tasks:
 # ansible <hostname> -m setup
 ```
 
+hostname要换成你主机标签的名字。
 
+然后我们在我们的roles文件里面，可以这样写：
+
+```
+
+```
 
 
 
