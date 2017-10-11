@@ -58,5 +58,17 @@ tasks:
   debug: msg="register domain is {{ domain.stdout }}"
 ```
 
-我们在这里把/opt/domain的值纪录到我们的变量domain中。。
+我们在这里把/opt/domain的值纪录到我们的变量domain中。
+
+## 获取主机的基本信息--fact
+
+有时我们需要获取目标主机的一些信息，如固定的IP地址，磁盘状况等等。我们当然可以自己写一些脚本来获取我们自己想要的值。我们用下面的命令可以看到，ansible内部自带的一些脚本给我们收集到的机器信息：
+
+```
+# ansible <hostname> -m setup
+```
+
+
+
+
 
