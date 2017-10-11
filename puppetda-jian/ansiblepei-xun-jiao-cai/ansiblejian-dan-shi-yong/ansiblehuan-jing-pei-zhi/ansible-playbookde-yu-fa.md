@@ -14,7 +14,7 @@
      - testuser2
 ```
 
-我们也支持多层循环的嵌套：
+我们也支持字典类型的循环：
 
 ```
 - name: add several users
