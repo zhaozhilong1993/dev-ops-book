@@ -73,7 +73,8 @@ hostname要换成你主机标签的名字。
 然后我们在我们的roles文件里面，可以这样写：
 
 ```
-
+- name: test
+  debug: msg="ansible factor {{ ansible_hostname }}"
 ```
 
 ## 自定义fact值
