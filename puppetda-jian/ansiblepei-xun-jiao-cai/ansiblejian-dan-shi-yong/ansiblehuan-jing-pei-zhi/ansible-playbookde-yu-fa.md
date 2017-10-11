@@ -80,7 +80,7 @@ hostname要换成你主机标签的名字。
 ## 自定义fact值
 
 ```
-
+# vim /etc/ansible/facts.d/test.fact
 ```
 
 ## 模版控制
