@@ -36,7 +36,7 @@ users:
   bob:
     name: Bob Bananarama
     telephone: 987-654-3210
-    
+
 tasks:
   - name: Print phone records
     debug: msg="User {{ item.key }} is {{ item.value.name }} ({{ item.value.telephone }})"
@@ -44,6 +44,15 @@ tasks:
 ```
 
 ## 注册变量
+
+```
+     - shell: /usr/bin/foo
+       register: foo_result
+       ignore_errors: True
+
+     - shell: /usr/bin/bar
+       when: foo_result.rc == 5
+```
 
 
 
