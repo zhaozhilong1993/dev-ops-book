@@ -34,9 +34,10 @@ users:
       name: Alice Appleworth
       telephone: 123-456-7890
   bob:
-    name: Bob Bananarama
+  name: Bob Bananarama
     telephone: 987-654-3210
 
+# vim /etc/ansible/roles/nic/tasks/main.yaml
 tasks:
   - name: Print phone records
     debug: msg="User {{ item.key }} is {{ item.value.name }} ({{ item.value.telephone }})"

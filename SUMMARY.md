@@ -17,7 +17,7 @@
   * [Ansible简单使用](puppetda-jian/ansiblepei-xun-jiao-cai/ansiblejian-dan-shi-yong.md)
   * [Ansible Playbooks介绍](puppetda-jian/ansiblede-qiang-da-zhi-chu-playbooks.md)
   * [Ansible Playbooks环境配置](puppetda-jian/ansiblepei-xun-jiao-cai/ansiblejian-dan-shi-yong/ansiblehuan-jing-pei-zhi.md)
-  * [Ansible Playbook的语法](puppetda-jian/ansiblepei-xun-jiao-cai/ansiblejian-dan-shi-yong/ansiblehuan-jing-pei-zhi/ansible-playbookde-yu-fa.md)
+  * [Ansible Playbooks的语法](puppetda-jian/ansiblepei-xun-jiao-cai/ansiblejian-dan-shi-yong/ansiblehuan-jing-pei-zhi/ansible-playbookde-yu-fa.md)
 * [高可用培训教材](puppetda-jian/gao-ke-yong-pei-xun-jiao-cai.md)
   * [Pacemaker\(补充\)](puppetda-jian/gao-ke-yong-pei-xun-jiao-cai/pacemaker.md)
   * [RabbitMQ培训教材](puppetda-jian/rabbitmqpei-xun-jiao-cai.md)
