@@ -79,6 +79,8 @@ hostname要换成你主机标签的名字。
 
 ## 自定义fact值
 
+http://ju.outofmemory.cn/entry/104885
+
 ```
 # vim /etc/ansible/facts.d/test.fact
 [testdir]
