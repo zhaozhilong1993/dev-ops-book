@@ -58,5 +58,5 @@ tasks:
   debug: msg="register domain is {{ domain.stdout }}"
 ```
 
-
+我们在这里把/opt/domain的值纪录到我们的变量domain中。。
 
