@@ -84,6 +84,8 @@ hostname要换成你主机标签的名字。
 
 ## 模版控制
 
+我们有时候需要根据当前的环境，生成一个我们定义的配置文件。那么这部分怎么写呢？
+
 ```
 template: src=foo.cfg.j2 dest={{ remote_install_path }}/foo.cfg
 ```
