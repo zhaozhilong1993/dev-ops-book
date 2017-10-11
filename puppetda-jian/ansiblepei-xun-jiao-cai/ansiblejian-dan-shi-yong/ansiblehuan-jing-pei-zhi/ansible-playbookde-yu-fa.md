@@ -17,7 +17,11 @@
 我们也支持多层循环的嵌套：
 
 ```
-
+- name: add several users
+  user: name={{ item.name }} state=present groups={{ item.groups }}
+  with_items:
+    - { name: 'testuser1', groups: 'wheel' }
+    - { name: 'testuser2', groups: 'root' }
 ```
 
 ## 注册变量
