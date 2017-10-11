@@ -47,12 +47,15 @@ tasks:
 ## 注册变量
 
 ```
-     - shell: /usr/bin/foo
-       register: foo_result
-       ignore_errors: True
+# vi /etc/ansible/roles/nic/tasks/main.yaml
 
-     - shell: /usr/bin/bar
-       when: foo_result.rc == 5
+- name: register values
+  shell: /usr/bin/cat /opt/domain
+  register: domain
+  ignore_errors: True
+
+- name: Print register values
+  debug: msg="register domain is {{ domain.stdout }}"
 ```
 
 
