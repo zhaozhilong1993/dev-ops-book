@@ -43,4 +43,6 @@
   * [Gnocchi](puppetda-jian/gnocchi.md)
   * [Rally](puppetda-jian/rally.md)
   * [Tempest](puppetda-jian/tempest.md)
+* [OpenShift](puppetda-jian/openshift.md)
+  * [OpenShitf命令行](puppetda-jian/openshift/openshitfming-ling-xing.md)
 
