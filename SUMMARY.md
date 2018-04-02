@@ -45,4 +45,5 @@
   * [Tempest](puppetda-jian/tempest.md)
 * [OpenShift](puppetda-jian/openshift.md)
   * [OpenShitf命令行](puppetda-jian/openshift/openshitfming-ling-xing.md)
+  * [OpenShift初始化集群](puppetda-jian/openshift/openshitfming-ling-xing/openshiftchu-shi-hua-ji-qun.md)
 
