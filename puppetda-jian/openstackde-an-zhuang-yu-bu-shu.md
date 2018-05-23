@@ -19,10 +19,8 @@
 or 安装Q 版yum源
 
 ```
-# yum install centos-release-openstack-newton
+# yum install centos-release-openstack-queens
 ```
-
-
 
 之后安装packstack
 
