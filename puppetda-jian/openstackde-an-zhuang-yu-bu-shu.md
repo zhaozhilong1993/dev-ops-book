@@ -30,6 +30,7 @@ baseurl=http://mirror.centos.org/centos/$releasever/virt/$basearch/kvm-common/
 
 ```
 # yum install openstack-packstack -y
+[Now]
 ```
 
 之后生成配置文件
