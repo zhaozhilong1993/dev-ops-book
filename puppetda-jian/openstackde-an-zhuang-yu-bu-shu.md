@@ -20,6 +20,10 @@ or 安装Q 版yum源
 
 ```
 # yum install centos-release-openstack-queens
+
+# vim /etc/yum.repo.d/CentOS-QEMU-EV.repo
+...
+baseurl=http://mirror.centos.org/centos/$releasever/virt/$basearch/kvm-common/
 ```
 
 之后安装packstack
