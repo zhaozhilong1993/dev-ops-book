@@ -1,4 +1,4 @@
-# OpenStack的安装与部署【N版】
+# OpenStack的安装与部署
 
 ## Packstack安装
 
@@ -10,11 +10,19 @@
 | network | 192.168.20.27 |
 | compute | 192.168.20.27 |
 
-安装yum源
+安装N 版yum源
 
 ```
 # yum install centos-release-openstack-newton
 ```
+
+or 安装Q 版yum源
+
+```
+# yum install centos-release-openstack-newton
+```
+
+
 
 之后安装packstack
 
